@@ -1,0 +1,69 @@
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.Cache
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Cadastro.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.MenuPrincipal.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.TrocaDeSenha.resources
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.Cache
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+F:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+F:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.MenuPrincipal.resources
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.TrocaDeSenha.resources
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.Cache
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmCadastro.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+Z:\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.frmCadastro.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.MenuPrincipal.resources
+Z:\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.TrocaDeSenha.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.frmCadastro.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.MenuPrincipal.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.TrocaDeSenha.resources
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.cache
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CopyComplete

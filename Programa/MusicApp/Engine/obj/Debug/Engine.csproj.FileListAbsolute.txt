@@ -1,0 +1,28 @@
+F:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll.config
+F:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll
+F:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.pdb
+F:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+F:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+F:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.dll
+F:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll.config
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.pdb
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.dll
+C:\Users\u17167\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
+Z:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll.config
+Z:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll
+Z:\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.pdb
+Z:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+Z:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+Z:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.dll
+Z:\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll.config
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.dll
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\bin\Debug\Engine.pdb
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.dll
+C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
