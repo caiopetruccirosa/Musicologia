@@ -14,7 +14,7 @@ namespace Engine
         private static string cs = Properties.Settings.Default.BDConnectionString;
 
         public static Boolean Cadastrar(string username, string pw, string email) {
-             //verifica se os dados são válidos
+            //verifica se os dados são válidos
             if (ValidaCadastro(username, pw, email))
             {
                 // cria conexao ao banco de dados

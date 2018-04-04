@@ -36,7 +36,9 @@
             this.pgbLoading.Location = new System.Drawing.Point(2, 162);
             this.pgbLoading.Name = "pgbLoading";
             this.pgbLoading.Size = new System.Drawing.Size(441, 23);
+            this.pgbLoading.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pgbLoading.TabIndex = 0;
+            this.pgbLoading.UseWaitCursor = true;
             // 
             // SplashScreen
             // 

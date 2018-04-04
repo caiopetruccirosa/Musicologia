@@ -26,3 +26,9 @@ C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engi
 C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
 C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.dll
 C:\Users\Caio Rosa\Downloads\Prática II\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\bin\Debug\Engine.dll.config
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\bin\Debug\Engine.dll
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\bin\Debug\Engine.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Debug\Engine.dll
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Debug\Engine.pdb
