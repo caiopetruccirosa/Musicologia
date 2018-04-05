@@ -28,17 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pgbLoading = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
-            // 
-            // pgbLoading
-            // 
-            this.pgbLoading.Location = new System.Drawing.Point(2, 162);
-            this.pgbLoading.Name = "pgbLoading";
-            this.pgbLoading.Size = new System.Drawing.Size(441, 23);
-            this.pgbLoading.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgbLoading.TabIndex = 0;
-            this.pgbLoading.UseWaitCursor = true;
             // 
             // SplashScreen
             // 
@@ -47,7 +37,6 @@
             this.BackgroundImage = global::MusicApp.Properties.Resources.loading;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(446, 188);
-            this.Controls.Add(this.pgbLoading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -59,7 +48,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar pgbLoading;
     }
 }

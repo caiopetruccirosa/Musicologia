@@ -18,6 +18,13 @@ namespace MusicApp
         private FrmJogo jogo;
         private string cs = Properties.Settings.Default.BD17197ConnectionString;
 
+        private string phTxtLogEmail = "E-mail...";
+        private string phTxtLogPassword = "Senha...";
+        private string phTxtCadUsername = "Username...";
+        private string phTxtCadPassword = "Senha...";
+        private string phTxtCadConfPass = "Confirme a senha...";
+        private string phTxtCadEmail = "E-mail...";
+
         public FrmMain()
         {
             InitializeComponent();
@@ -28,7 +35,6 @@ namespace MusicApp
         {
             splash = new SplashScreen();
             splash.Show();
-            Thread.Sleep(3000);
         }
 
         private void FrmMain_Shown(object sender, EventArgs e)
@@ -39,36 +45,50 @@ namespace MusicApp
             PlCadastro.Hide();
         }
 
+        /////////////////////
+
         private void LblLogin_Click(object sender, EventArgs e)
         {
-            PlLogin.Show();
             PlCadastro.Hide();
+            InicializarCampos();
+            PlLogin.Show();
         }
 
         private void LblCadastro_Click(object sender, EventArgs e)
         {
             PlLogin.Hide();
+            InicializarCampos();
             PlCadastro.Show();
         }
+
+        /////////////////////
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             int id;
+
+            string email = TxtLogEmail.Text;
+            string pw = TxtLogPassword.Text;
+
+            if (email == this.phTxtLogEmail && TxtLogEmail.ForeColor == Color.Gray)
+                email = "";
+
+            if (pw == this.phTxtLogPassword && TxtLogPassword.ForeColor == Color.Gray && TxtLogPassword.UseSystemPasswordChar == false)
+                pw = "";
+
             try
             {
-                id = Engine.BDActions.Login(TxtLogEmail.Text, TxtLogPassword.Text);
+                id = Engine.BDActions.Login(email, pw);
                 if (id > 0)
                 {
                     jogo = new FrmJogo(id);
 
                     this.Hide();
-                    jogo.Show();
                     jogo.FormClosed += (s, arg) => this.Close();
+                    jogo.Show();
                 }
                 else
-                {
                     SinalizarAviso(LblAvisoLogin, "E-mail ou senha incorreto!");
-                }
             }
             catch (Exception ex)
             {
@@ -78,17 +98,29 @@ namespace MusicApp
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
+            string username = TxtCadUsername.Text;
+            string email = TxtCadEmail.Text;
+            string pw = TxtCadPassword.Text;
+            string confpw = TxtCadConfPass.Text;
+
+            if (username == this.phTxtCadUsername && TxtCadUsername.ForeColor == Color.Gray)
+                username = "";
+
+            if (email == this.phTxtCadEmail && TxtCadEmail.ForeColor == Color.Gray)
+                email = "";
+
+            if (pw == this.phTxtCadPassword && TxtCadPassword.ForeColor == Color.Gray && TxtCadPassword.UseSystemPasswordChar == false)
+                pw = "";
+
+            if (confpw == this.phTxtCadConfPass && TxtCadConfPass.ForeColor == Color.Gray && TxtCadConfPass.UseSystemPasswordChar == false)
+                confpw = "";
+
             try
             {
-                if (Engine.BDActions.Cadastrar(TxtCadUsername.Text, TxtCadPassword.Text, TxtCadEmail.Text))
-                {
+                if (Engine.BDActions.Cadastrar(username, email, pw, confpw))
                     SinalizarAviso(LblAvisoCadastro, "Cadastrado com sucesso!");
-                }
                 else
-                {
-                    SinalizarAviso(LblAvisoCadastro, "Ocorreu algum erro!");
-                }
-                    
+                    SinalizarAviso(LblAvisoCadastro, "Ocorreu algum erro!");    
             }
             catch (Exception ex)
             {
@@ -114,26 +146,27 @@ namespace MusicApp
             this.Dispose();
         }
 
-        /// //////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
      
         private void SinalizarAviso(Label lbl, string str)
         {
             lbl.Visible = true;
             lbl.Text = str;
-
-            Thread.Sleep(6000);
-            lbl.Visible = false;
         }
 
         private void InicializarCampos()
         {
-            TxtLogEmail.Text = "E-mail...";
-            TxtLogPassword.Text = "Senha...";
+            TxtLogEmail.Text = this.phTxtLogEmail;
+            TxtLogPassword.Text = this.phTxtLogPassword;
 
-            TxtCadUsername.Text = "Username...";
-            TxtCadPassword.Text = "Senha...";
-            TxtCadConfPass.Text = "Confirme a senha...";
-            TxtCadEmail.Text = "E-mail...";
+            TxtCadUsername.Text = this.phTxtCadUsername;
+            TxtCadPassword.Text = this.phTxtCadPassword;
+            TxtCadConfPass.Text = this.phTxtCadConfPass;
+            TxtCadEmail.Text = this.phTxtCadEmail;
+
+            TxtLogPassword.UseSystemPasswordChar = false;
+            TxtCadPassword.UseSystemPasswordChar = false;
+            TxtCadConfPass.UseSystemPasswordChar = false;
 
             TxtLogEmail.ForeColor = Color.Gray;
             TxtLogPassword.ForeColor = Color.Gray;
@@ -142,6 +175,12 @@ namespace MusicApp
             TxtCadPassword.ForeColor = Color.Gray;
             TxtCadConfPass.ForeColor = Color.Gray;
             TxtCadEmail.ForeColor = Color.Gray;
+
+            LblAvisoLogin.Visible = false;
+            LblAvisoCadastro.Visible = false;
+
+            LblAvisoLogin.Text = "Aviso";
+            LblAvisoCadastro.Text = "Aviso";
         }
 
         private void InserirPlaceholder(TextBox txt)
@@ -150,22 +189,31 @@ namespace MusicApp
             {
                 txt.ForeColor = Color.Gray;
 
-                if (txt == TxtLogEmail || txt == TxtCadEmail)
+                if (txt == TxtLogEmail)
                 {
-                    txt.Text = "E-mail...";
+                    txt.Text = this.phTxtLogEmail;
                 }
-                else if (txt == TxtLogPassword || txt == TxtCadPassword)
+                else if (txt == TxtCadEmail)
+                {
+                    txt.Text = this.phTxtCadEmail;
+                }
+                else if (txt == TxtLogPassword)
                 {
                     txt.UseSystemPasswordChar = false;
-                    txt.Text = "Senha...";
+                    txt.Text = this.phTxtLogPassword;
+                }
+                else if (txt == TxtCadPassword)
+                {
+                    txt.UseSystemPasswordChar = false;
+                    txt.Text = this.phTxtCadPassword;
                 }
                 else if (txt == TxtCadUsername)
                 {
-                    txt.Text = "Username...";
+                    txt.Text = this.phTxtCadUsername;
                 }
                 else if (txt == TxtCadConfPass)
                 {
-                    txt.Text = "Confirme a senha...";
+                    txt.Text = this.phTxtCadConfPass;
                 }
             }
         }
@@ -174,10 +222,12 @@ namespace MusicApp
         {
             if (
                 (
-                 ((txt == TxtLogEmail || txt == TxtCadEmail) && txt.Text == "E-mail...") ||
-                 ((txt == TxtLogPassword || txt == TxtCadPassword) && txt.Text == "Senha...") ||
-                 (txt == TxtCadUsername && txt.Text == "Username...") ||
-                 (txt == TxtCadConfPass && txt.Text == "Confirme a senha...")
+                 (txt == TxtLogEmail && txt.Text == this.phTxtLogEmail) ||
+                 (txt == TxtCadEmail && txt.Text == this.phTxtCadEmail) ||
+                 (txt == TxtLogPassword && txt.Text == this.phTxtLogPassword) ||
+                 (txt == TxtCadPassword && txt.Text == this.phTxtCadPassword) ||
+                 (txt == TxtCadUsername && txt.Text == this.phTxtCadUsername) ||
+                 (txt == TxtCadConfPass && txt.Text == this.phTxtCadConfPass)
                 )
                 && txt.ForeColor == Color.Gray
                )

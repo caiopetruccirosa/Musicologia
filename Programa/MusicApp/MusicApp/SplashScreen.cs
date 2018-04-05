@@ -19,10 +19,7 @@ namespace MusicApp
 
         private void SplashScreen_Shown(object sender, EventArgs e)
         {
-            pgbLoading.Show();
-            pgbLoading.Visible = true;
-            pgbLoading.Style = ProgressBarStyle.Marquee;
-            pgbLoading.MarqueeAnimationSpeed = 30;
+            //
         }
     }
 }

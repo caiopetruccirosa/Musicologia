@@ -33,5 +33,16 @@ namespace MusicApp.Properties {
                 return ((string)(this["BD17197ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=regulus.academico.cotuca.unicamp.br;Initial Catalog=BDPRII17167;Persi" +
+            "st Security Info=True;User ID=BDPRII17167;Password=BDPRII17167")]
+        public string BDConnectionString {
+            get {
+                return ((string)(this["BDConnectionString"]));
+            }
+        }
     }
 }
