@@ -107,7 +107,7 @@ namespace Engine
             if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript))
                 score++;
 
-            return (PasswordScore)score;
+            return (PasswordScore) score;
         }
 
 

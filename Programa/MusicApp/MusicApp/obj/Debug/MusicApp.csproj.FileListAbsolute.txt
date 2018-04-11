@@ -98,3 +98,34 @@ C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debu
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmJogo.resources
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.cache
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CopyComplete
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe.config
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.exe
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\MusicApp.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\Engine.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Debug\Engine.dll.config
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csprojResolveAssemblyReference.cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMain.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.Properties.Resources.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.SplashScreen.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.GenerateResource.Cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.csproj.CoreCompileInputs.cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.exe
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Debug\MusicApp.FrmMenu.resources

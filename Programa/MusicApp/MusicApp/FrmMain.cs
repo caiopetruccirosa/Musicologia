@@ -15,7 +15,7 @@ namespace MusicApp
     public partial class FrmMain : Form
     {
         private SplashScreen splash;
-        private FrmJogo jogo;
+        private FrmMenu jogo;
         private string cs = Properties.Settings.Default.BD17197ConnectionString;
 
         private string phTxtLogEmail = "E-mail...";
@@ -24,6 +24,8 @@ namespace MusicApp
         private string phTxtCadPassword = "Senha...";
         private string phTxtCadConfPass = "Confirme a senha...";
         private string phTxtCadEmail = "E-mail...";
+
+        private bool podeVerificar = false;
 
         public FrmMain()
         {
@@ -81,11 +83,11 @@ namespace MusicApp
                 id = Engine.BDActions.Login(email, pw);
                 if (id > 0)
                 {
-                    jogo = new FrmJogo(id);
+                    jogo = new FrmMenu(id);
 
                     this.Hide();
-                    jogo.FormClosed += (s, arg) => this.Close();
                     jogo.Show();
+                    jogo.FormClosed += (s, arg) => this.Close();
                 }
                 else
                     SinalizarAviso(LblAvisoLogin, "E-mail ou senha incorreto!");
@@ -207,13 +209,14 @@ namespace MusicApp
                     txt.UseSystemPasswordChar = false;
                     txt.Text = this.phTxtCadPassword;
                 }
+                else if (txt == TxtCadConfPass)
+                {
+                    txt.UseSystemPasswordChar = false;
+                    txt.Text = this.phTxtCadConfPass;
+                }
                 else if (txt == TxtCadUsername)
                 {
                     txt.Text = this.phTxtCadUsername;
-                }
-                else if (txt == TxtCadConfPass)
-                {
-                    txt.Text = this.phTxtCadConfPass;
                 }
             }
         }
@@ -237,6 +240,66 @@ namespace MusicApp
                 txt.Text = "";
                 txt.ForeColor = Color.Black;
             }
+        }
+
+        private void CheckPasswords(TextBox txtPw, TextBox txtConfPw)
+        {
+            if (txtPw.ForeColor == Color.Black && txtPw.UseSystemPasswordChar == true &&
+                txtConfPw.ForeColor == Color.Black && txtConfPw.UseSystemPasswordChar == true &&
+                !(txtPw.Text.Trim() == "" || txtConfPw.Text.Trim() == ""))
+            {
+                if (!txtPw.Text.Equals(txtConfPw.Text))
+                    LblPWErro.Visible = true;
+                else
+                    LblPWErro.Visible = false;
+
+                this.podeVerificar = true;
+            }
+            else
+                LblPWErro.Visible = false;
+        }
+
+        private void CheckStrength(TextBox txtPw)
+        {
+            if (txtPw.ForeColor == Color.Black && txtPw.UseSystemPasswordChar == true && txtPw.Text.Trim() != "")
+            {
+                int strength = (int)Engine.BDActions.CheckPwStrength(txtPw.Text);
+
+                switch (strength)
+                {
+                    case 1:
+                        LblPWStrength.Text = "Força: Muito fraca";
+                        LblPWStrength.Visible = true;
+                        break;
+                    case 2:
+                        LblPWStrength.Text = "Força: Fraca";
+                        LblPWStrength.Visible = true;
+                        break;
+                    case 3:
+                        LblPWStrength.Text = "Força: Média";
+                        LblPWStrength.Visible = true;
+                        break;
+                    case 4:
+                        LblPWStrength.Text = "Força: Forte";
+                        LblPWStrength.Visible = true;
+                        break;
+                    case 5:
+                        LblPWStrength.Text = "Força: Muito forte";
+                        LblPWStrength.Visible = true;
+                        break;
+                    default:
+                        if (strength > 5)
+                        {
+                            LblPWStrength.Text = "Força: Muito forte";
+                            LblPWStrength.Visible = true;
+                        }
+                        else
+                            LblPWStrength.Visible = false;
+                        break;
+                }
+            }
+            else
+                LblPWStrength.Visible = false;
         }
 
         private void TxtLogEmail_KeyPress(object sender, KeyPressEventArgs e)
@@ -327,6 +390,30 @@ namespace MusicApp
         private void TxtCadConfPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             RemoverPlaceholder(TxtCadConfPass);
+        }
+
+        private void TxtCadConfPass_TextChanged(object sender, EventArgs e)
+        {
+            this.CheckPasswords(TxtCadPassword, TxtCadConfPass);
+        }
+
+        private void TxtCadPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (this.podeVerificar)
+                this.CheckPasswords(TxtCadPassword, TxtCadConfPass);
+            this.CheckStrength(TxtCadPassword);
+        }
+
+        private void FrmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (PlLogin.Visible == true && PlCadastro.Visible == false)
+                    BtnLogin_Click(new object(), new EventArgs());
+                else if (PlCadastro.Visible == true && PlLogin.Visible == false)
+                    BtnCadastrar_Click(new object(), new EventArgs());
+            }
+
         }
     }
 }

@@ -1,0 +1,6 @@
+Z:\Musicologia\Programa\MusicApp\Engine\bin\Release\Engine.dll.config
+Z:\Musicologia\Programa\MusicApp\Engine\bin\Release\Engine.dll
+Z:\Musicologia\Programa\MusicApp\Engine\bin\Release\Engine.pdb
+Z:\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.csproj.CoreCompileInputs.cache
+Z:\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.dll
+Z:\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.pdb

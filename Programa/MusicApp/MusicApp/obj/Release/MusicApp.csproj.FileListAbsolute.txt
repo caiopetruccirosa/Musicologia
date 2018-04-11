@@ -1,0 +1,31 @@
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe.config
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.pdb
+Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll.config
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csprojResolveAssemblyReference.cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMain.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMenu.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.Properties.Resources.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.SplashScreen.resources
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.GenerateResource.Cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CoreCompileInputs.cache
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.exe
+Z:\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe.config
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.pdb
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll.config
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csprojResolveAssemblyReference.cache
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMain.resources
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMenu.resources
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.Properties.Resources.resources
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.SplashScreen.resources
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.GenerateResource.cache
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CopyComplete
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.exe
+C:\Users\Caio Rosa\Downloads\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
