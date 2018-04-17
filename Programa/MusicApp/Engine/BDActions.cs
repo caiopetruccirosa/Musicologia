@@ -119,11 +119,11 @@ namespace Engine
             if (ValidaLogin(email, pw))
             {
                 // cria conexao ao banco de dados
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
                 // cria comando de consulta ao SQL 
-                SqlCommand cmd = new SqlCommand("SELECT id FROM usuario WHERE email=@email AND pw=@pw", con);
+                SqlCommand cmd = new SqlCommand("SELECT id FROM usuario WHERE email=@email AND pw=@pw", conn);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@pw", EncodePassword(pw));
 
@@ -134,7 +134,7 @@ namespace Engine
                 try
                 {
                     //abre a conexao
-                    con.Open();
+                    conn.Open();
                     // executa a consulta
                     adapter.Fill(ds);
 
@@ -153,8 +153,8 @@ namespace Engine
                 finally
                 {
                     // encerra a conexao
-                    con.Close();
-                    con.Dispose();
+                    conn.Close();
+                    conn.Dispose();
                 }
             }
 
@@ -170,8 +170,25 @@ namespace Engine
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
+                SqlCommand cmd = new SqlCommand("SELECT id FROM usuario WHERE email=@email", conn);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                //abre a conexao
+                conn.Open();
+                // executa a consulta
+                adapter.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                    throw new Exception("E-mail já usado!");
+
+                conn = new SqlConnection();
+                conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
                 // cria comando de inserção ao SQL 
-                SqlCommand cmd = new SqlCommand("INSERT INTO usuario VALUES(@username,  @email, @pw, @points, @fase)", conn);
+                cmd = new SqlCommand("INSERT INTO usuario VALUES(@username,  @email, @pw, @points, @fase)", conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@pw", EncodePassword(pw));

@@ -24,6 +24,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.plName = new System.Windows.Forms.Panel();
+            this.BtnMin = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.PlCadastro = new System.Windows.Forms.Panel();
             this.LblPWStrength = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.TxtLogPassword = new System.Windows.Forms.TextBox();
             this.TxtLogEmail = new System.Windows.Forms.TextBox();
-            this.BtnMin = new System.Windows.Forms.Button();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.plName.SuspendLayout();
             this.PlCadastro.SuspendLayout();
             this.PlLogin.SuspendLayout();
@@ -60,6 +60,37 @@
             this.plName.Name = "plName";
             this.plName.Size = new System.Drawing.Size(432, 69);
             this.plName.TabIndex = 3;
+            // 
+            // BtnMin
+            // 
+            this.BtnMin.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnMin.BackgroundImage = global::MusicApp.Properties.Resources.minimize;
+            this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMin.Location = new System.Drawing.Point(372, 0);
+            this.BtnMin.Name = "BtnMin";
+            this.BtnMin.Size = new System.Drawing.Size(24, 24);
+            this.BtnMin.TabIndex = 0;
+            this.BtnMin.TabStop = false;
+            this.BtnMin.UseVisualStyleBackColor = false;
+            this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
+            // 
+            // BtnClose
+            // 
+            this.BtnClose.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnClose.BackgroundImage = global::MusicApp.Properties.Resources.close;
+            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnClose.Location = new System.Drawing.Point(402, 0);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(24, 24);
+            this.BtnClose.TabIndex = 0;
+            this.BtnClose.TabStop = false;
+            this.BtnClose.UseVisualStyleBackColor = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // lbNome
             // 
@@ -278,37 +309,6 @@
             this.TxtLogEmail.Enter += new System.EventHandler(this.TxtLogEmail_Enter);
             this.TxtLogEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLogEmail_KeyPress);
             this.TxtLogEmail.Leave += new System.EventHandler(this.TxtLogEmail_Leave);
-            // 
-            // BtnMin
-            // 
-            this.BtnMin.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnMin.BackgroundImage = global::MusicApp.Properties.Resources.minimize;
-            this.BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnMin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMin.Location = new System.Drawing.Point(372, 0);
-            this.BtnMin.Name = "BtnMin";
-            this.BtnMin.Size = new System.Drawing.Size(24, 24);
-            this.BtnMin.TabIndex = 0;
-            this.BtnMin.TabStop = false;
-            this.BtnMin.UseVisualStyleBackColor = false;
-            this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
-            // 
-            // BtnClose
-            // 
-            this.BtnClose.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnClose.BackgroundImage = global::MusicApp.Properties.Resources.close;
-            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnClose.Location = new System.Drawing.Point(402, 0);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(24, 24);
-            this.BtnClose.TabIndex = 0;
-            this.BtnClose.TabStop = false;
-            this.BtnClose.UseVisualStyleBackColor = false;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // FrmMain
             // 

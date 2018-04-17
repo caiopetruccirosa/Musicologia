@@ -120,7 +120,10 @@ namespace MusicApp
             try
             {
                 if (Engine.BDActions.Cadastrar(username, email, pw, confpw))
+                {
+                    InicializarCampos();
                     SinalizarAviso(LblAvisoCadastro, "Cadastrado com sucesso!");
+                }
                 else
                     SinalizarAviso(LblAvisoCadastro, "Ocorreu algum erro!");    
             }
@@ -183,6 +186,9 @@ namespace MusicApp
 
             LblAvisoLogin.Text = "Aviso";
             LblAvisoCadastro.Text = "Aviso";
+
+            LblPWStrength.Visible = false;
+            LblPWErro.Visible = false;
         }
 
         private void InserirPlaceholder(TextBox txt)
