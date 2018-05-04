@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.plContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.plFases = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.plMenu = new System.Windows.Forms.Panel();
             this.LblName = new System.Windows.Forms.Label();
             this.BtnSettings = new System.Windows.Forms.Button();
             this.BtnJogar = new System.Windows.Forms.Button();
@@ -42,7 +44,8 @@
             this.BtnMaximize = new System.Windows.Forms.Button();
             this.BtnMinimize = new System.Windows.Forms.Button();
             this.plContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.plFases.SuspendLayout();
+            this.plMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // plContainer
@@ -51,25 +54,44 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.plContainer.Controls.Add(this.panel1);
+            this.plContainer.Controls.Add(this.plFases);
             this.plContainer.Location = new System.Drawing.Point(0, 24);
             this.plContainer.Name = "plContainer";
-            this.plContainer.Size = new System.Drawing.Size(591, 338);
+            this.plContainer.Size = new System.Drawing.Size(597, 338);
             this.plContainer.TabIndex = 4;
             // 
-            // panel1
+            // plFases
             // 
-            this.panel1.Controls.Add(this.LblName);
-            this.panel1.Controls.Add(this.BtnSettings);
-            this.panel1.Controls.Add(this.BtnJogar);
-            this.panel1.Controls.Add(this.BtnAbout);
-            this.panel1.Controls.Add(this.BtnPraticar);
-            this.panel1.Controls.Add(this.BtnAchievement);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 335);
-            this.panel1.TabIndex = 7;
+            this.plFases.Controls.Add(this.plMenu);
+            this.plFases.Controls.Add(this.label2);
+            this.plFases.Location = new System.Drawing.Point(3, 0);
+            this.plFases.Name = "plFases";
+            this.plFases.Size = new System.Drawing.Size(585, 332);
+            this.plFases.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(-3, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(588, 81);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Fases";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // plMenu
+            // 
+            this.plMenu.Controls.Add(this.LblName);
+            this.plMenu.Controls.Add(this.BtnSettings);
+            this.plMenu.Controls.Add(this.BtnJogar);
+            this.plMenu.Controls.Add(this.BtnAbout);
+            this.plMenu.Controls.Add(this.BtnPraticar);
+            this.plMenu.Controls.Add(this.BtnAchievement);
+            this.plMenu.Controls.Add(this.button4);
+            this.plMenu.Location = new System.Drawing.Point(0, 3);
+            this.plMenu.Name = "plMenu";
+            this.plMenu.Size = new System.Drawing.Size(588, 335);
+            this.plMenu.TabIndex = 7;
             // 
             // LblName
             // 
@@ -101,6 +123,7 @@
             this.BtnJogar.TabIndex = 5;
             this.BtnJogar.Text = "Jogar";
             this.BtnJogar.UseVisualStyleBackColor = true;
+            this.BtnJogar.Click += new System.EventHandler(this.BtnJogar_Click);
             // 
             // BtnAbout
             // 
@@ -152,7 +175,7 @@
             this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Location = new System.Drawing.Point(562, 0);
+            this.BtnClose.Location = new System.Drawing.Point(565, 0);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(24, 24);
             this.BtnClose.TabIndex = 0;
@@ -168,7 +191,7 @@
             this.BtnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMaximize.Location = new System.Drawing.Point(534, 0);
+            this.BtnMaximize.Location = new System.Drawing.Point(537, 0);
             this.BtnMaximize.Name = "BtnMaximize";
             this.BtnMaximize.Size = new System.Drawing.Size(24, 24);
             this.BtnMaximize.TabIndex = 0;
@@ -184,7 +207,7 @@
             this.BtnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimize.Location = new System.Drawing.Point(506, 0);
+            this.BtnMinimize.Location = new System.Drawing.Point(509, 0);
             this.BtnMinimize.Name = "BtnMinimize";
             this.BtnMinimize.Size = new System.Drawing.Size(24, 24);
             this.BtnMinimize.TabIndex = 0;
@@ -197,7 +220,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(591, 362);
+            this.ClientSize = new System.Drawing.Size(594, 362);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnMaximize);
             this.Controls.Add(this.plContainer);
@@ -208,7 +231,8 @@
             this.Text = "Musicologia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu_FormClosing);
             this.plContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.plFases.ResumeLayout(false);
+            this.plMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -225,6 +249,8 @@
         private System.Windows.Forms.Button BtnPraticar;
         private System.Windows.Forms.Button BtnAchievement;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel plMenu;
+        private System.Windows.Forms.Panel plFases;
+        private System.Windows.Forms.Label label2;
     }
 }

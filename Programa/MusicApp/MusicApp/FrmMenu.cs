@@ -58,5 +58,11 @@ namespace MusicApp
             else
                 this.WindowState = FormWindowState.Maximized;
         }
+
+        private void BtnJogar_Click(object sender, EventArgs e)
+        {
+            plMenu.Hide();
+            plFases.Show();
+        }
     }
 }

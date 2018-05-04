@@ -8,5 +8,6 @@ namespace MusicApp.Fases
 {
     class FasePadrao
     {
+       
     }
 }

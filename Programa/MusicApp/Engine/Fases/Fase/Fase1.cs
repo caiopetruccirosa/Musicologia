@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MusicApp.Narradores
+namespace MusicApp.Fases
 {
-    class NarradorPadrao
+    class Fase1 : FasePadrao
     {
+
     }
 }
