@@ -59,3 +59,21 @@ C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.G
 C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CoreCompileInputs.cache
 C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.exe
 C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csprojResolveAssemblyReference.cache
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMain.resources
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMenu.resources
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.Properties.Resources.resources
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.SplashScreen.resources
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.GenerateResource.cache
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CoreCompileInputs.cache
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.exe
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe.config
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.exe
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\MusicApp.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.dll
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.pdb
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\Engine.dll.config
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.xml
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.CopyComplete

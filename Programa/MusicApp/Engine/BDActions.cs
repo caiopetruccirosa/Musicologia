@@ -113,7 +113,6 @@ namespace Engine
 
         ////////////////////////////////////////////
 
-
         public static int Login(string email, string pw)
         {
             if (ValidaLogin(email, pw))
@@ -138,7 +137,7 @@ namespace Engine
                     // executa a consulta
                     adapter.Fill(ds);
 
-                    if (ds.Tables[0].Rows.Count >= 1)
+                    if (ds.Tables[0].Rows.Count > 0)
                     {
                         dr = ds.Tables[0].Rows[0];
                         return Convert.ToInt32(dr.ItemArray[0].ToString());
@@ -216,6 +215,48 @@ namespace Engine
             }
 
             return false;
+        }
+
+        public static int QualFase(int id)
+        {
+            // cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            // cria comando de consulta ao SQL 
+            SqlCommand cmd = new SqlCommand("SELECT fase FROM usuario WHERE id=@id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            DataRow dr = null;
+
+            int fase = 0;
+            try
+            {
+                //abre a conexao
+                conn.Open();
+                // executa a consulta
+                adapter.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dr = ds.Tables[0].Rows[0];
+                    fase = Convert.ToInt32(dr.ItemArray[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro no login");
+            }
+            finally
+            {
+                // encerra a conexao
+                conn.Close();
+                conn.Dispose();
+            }
+
+            return fase;
         }
     }
 }
