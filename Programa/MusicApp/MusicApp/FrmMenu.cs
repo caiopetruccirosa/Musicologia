@@ -71,7 +71,7 @@ namespace MusicApp
                         break;
                 }
             }
-            else if (this.modo == "praticar")
+            else if (this.modo == "multiplayer")
             {
                 switch (fase)
                 {
@@ -91,9 +91,9 @@ namespace MusicApp
             }
         }
 
-        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        private void TrackBarVolume_Scroll(object sender, EventArgs e)
         {
-            this.player.Volume = trackBarVolume.Value;
+            this.player.Volume = TrackBarVolume.Value;
         }
 
         // Eventos dos botões do menu
@@ -105,35 +105,31 @@ namespace MusicApp
             
             plMenu.Hide();
             plFases.Show();
-
-            this.player.Click();
         }
 
-        private void BtnPraticar_Click(object sender, EventArgs e)
+        private void BtnMultiplayer_Click(object sender, EventArgs e)
         {
-            PrepararControlesPraticar();
+            PrepararControlesMultiplayer();
 
             plMenu.Hide();
             plFases.Show();
-
-            this.player.Click();
         }
 
         // Métodos que preparam e carregam a área de fases
         ////////////////////////////////////////////////////////////////
 
-        private void PrepararControlesPraticar()
+        private void PrepararControlesMultiplayer()
         {
             Button[] fases = { BtnFase1, BtnFase2, BtnFase3, BtnFase4, BtnFase5, BtnFase6 };
 
-            LblFases.Text = "Praticar";
+            LblFases.Text = "Multiplayer";
 
             // carregar a área
             for (int i = 0; i < fases.Length; i++)
             {
                 fases[i].Enabled = true;
                 fases[i].BackColor = SystemColors.HotTrack;
-                fases[i].Click += new System.EventHandler(this.Click_Praticar);
+                fases[i].Click += new System.EventHandler(this.Click_Multiplayer);
             }
         }
 
@@ -161,40 +157,15 @@ namespace MusicApp
             }
         }
 
-        // Eventos de retorno a algum painel
-        ////////////////////////////////////////////////////////////////
-
-        private void BtnVoltarFases_Click(object sender, EventArgs e)
-        {
-            if (this.modo == "jogar")
-                PrepararControlesJogar();
-            else if (this.modo == "praticar")
-                PrepararControlesPraticar();
-
-            plFase.Hide();
-            plFases.Show();
-
-            this.player.Click();
-        }
-
-        private void BtnVoltarMenu_Click(object sender, EventArgs e)
-        {
-            plFases.Hide();
-            plMenu.Show();
-            this.modo = "";
-
-            this.player.Click();
-        }
-
         // Eventos dos botões das fases
         //////////////////////////////////////////////////////////////////
 
-        private void Click_Praticar(object sender, EventArgs e)
+        private void Click_Multiplayer(object sender, EventArgs e)
         {
             plFases.Hide();
             plFase.Show();
 
-            this.modo = "praticar";
+            this.modo = "multiplayer";
 
             Button btn = (Button)sender;
             if (btn == BtnFase1)
@@ -231,6 +202,31 @@ namespace MusicApp
                 IniciarFase(5);
             else if (btn == BtnFase6)
                 IniciarFase(6);
+        }
+
+        // Eventos de retorno a algum painel
+        ////////////////////////////////////////////////////////////////
+
+        private void BtnVoltarFases_Click(object sender, EventArgs e)
+        {
+            if (this.modo == "jogar")
+                PrepararControlesJogar();
+            else if (this.modo == "multiplayer")
+                PrepararControlesMultiplayer();
+
+            plFase.Hide();
+            plFases.Show();
+
+            this.player.Click();
+        }
+
+        private void BtnVoltarMenu_Click(object sender, EventArgs e)
+        {
+            plFases.Hide();
+            plMenu.Show();
+            this.modo = "";
+
+            this.player.Click();
         }
 
         // Eventos extras do menu

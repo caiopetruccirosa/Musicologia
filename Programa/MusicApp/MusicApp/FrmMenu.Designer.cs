@@ -40,7 +40,7 @@ namespace MusicApp
             this.plAchievement = new System.Windows.Forms.Panel();
             this.BtnVoltarAchievement = new System.Windows.Forms.PictureBox();
             this.plSettings = new System.Windows.Forms.Panel();
-            this.trackBarVolume = new System.Windows.Forms.TrackBar();
+            this.TrackBarVolume = new System.Windows.Forms.TrackBar();
             this.BtnVoltarSettings = new System.Windows.Forms.PictureBox();
             this.plMenu = new System.Windows.Forms.Panel();
             this.LblMenu = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace MusicApp
             this.plAchievement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarAchievement)).BeginInit();
             this.plSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarSettings)).BeginInit();
             this.plMenu.SuspendLayout();
             this.plFases.SuspendLayout();
@@ -97,7 +97,7 @@ namespace MusicApp
             // 
             this.plFase.Controls.Add(this.BtnVoltarFases);
             this.plFase.Controls.Add(this.LblSeila);
-            this.plFase.Location = new System.Drawing.Point(0, 0);
+            this.plFase.Location = new System.Drawing.Point(600, 31);
             this.plFase.Name = "plFase";
             this.plFase.Size = new System.Drawing.Size(594, 332);
             this.plFase.TabIndex = 12;
@@ -171,22 +171,22 @@ namespace MusicApp
             // 
             this.plSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plSettings.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.plSettings.Controls.Add(this.trackBarVolume);
+            this.plSettings.Controls.Add(this.TrackBarVolume);
             this.plSettings.Controls.Add(this.BtnVoltarSettings);
             this.plSettings.Location = new System.Drawing.Point(175, 265);
             this.plSettings.Name = "plSettings";
             this.plSettings.Size = new System.Drawing.Size(255, 224);
             this.plSettings.TabIndex = 11;
             // 
-            // trackBarVolume
+            // TrackBarVolume
             // 
-            this.trackBarVolume.Location = new System.Drawing.Point(30, 110);
-            this.trackBarVolume.Maximum = 100;
-            this.trackBarVolume.Name = "trackBarVolume";
-            this.trackBarVolume.Size = new System.Drawing.Size(198, 45);
-            this.trackBarVolume.TabIndex = 1;
-            this.trackBarVolume.Value = 50;
-            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
+            this.TrackBarVolume.Location = new System.Drawing.Point(30, 110);
+            this.TrackBarVolume.Maximum = 100;
+            this.TrackBarVolume.Name = "TrackBarVolume";
+            this.TrackBarVolume.Size = new System.Drawing.Size(198, 45);
+            this.TrackBarVolume.TabIndex = 1;
+            this.TrackBarVolume.Value = 50;
+            this.TrackBarVolume.Scroll += new System.EventHandler(this.TrackBarVolume_Scroll);
             // 
             // BtnVoltarSettings
             // 
@@ -268,7 +268,7 @@ namespace MusicApp
             this.BtnPraticar.TabIndex = 4;
             this.BtnPraticar.Text = "Praticar";
             this.BtnPraticar.UseVisualStyleBackColor = true;
-            this.BtnPraticar.Click += new System.EventHandler(this.BtnPraticar_Click);
+            this.BtnPraticar.Click += new System.EventHandler(this.BtnMultiplayer_Click);
             // 
             // BtnAchievement
             // 
@@ -454,7 +454,7 @@ namespace MusicApp
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarAchievement)).EndInit();
             this.plSettings.ResumeLayout(false);
             this.plSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackBarVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarSettings)).EndInit();
             this.plMenu.ResumeLayout(false);
             this.plFases.ResumeLayout(false);
@@ -493,6 +493,6 @@ namespace MusicApp
         private System.Windows.Forms.Panel plFase;
         private System.Windows.Forms.Label LblSeila;
         private System.Windows.Forms.PictureBox BtnVoltarFases;
-        private System.Windows.Forms.TrackBar trackBarVolume;
+        private System.Windows.Forms.TrackBar TrackBarVolume;
     }
 }
