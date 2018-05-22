@@ -26,3 +26,10 @@ C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Release\Engi
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.dll
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.pdb
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\Engine\obj\Release\Engine.csprojResolveAssemblyReference.cache
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\bin\Release\Engine.dll.config
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\bin\Release\Engine.dll
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\bin\Release\Engine.pdb
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\obj\Release\Engine.csprojResolveAssemblyReference.cache
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\obj\Release\Engine.csproj.CoreCompileInputs.cache
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\obj\Release\Engine.dll
+C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\Engine\obj\Release\Engine.pdb

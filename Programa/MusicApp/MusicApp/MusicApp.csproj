@@ -65,6 +65,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fases\Fase1.cs" />
+    <Compile Include="Fases\Fase2.cs" />
+    <Compile Include="Fases\Fase3.cs" />
+    <Compile Include="Fases\Fase4.cs" />
+    <Compile Include="Fases\Fase5.cs" />
+    <Compile Include="Fases\Fase6.cs" />
+    <Compile Include="Fases\FasePadrao.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +84,10 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Narradores\Bach.cs" />
+    <Compile Include="Narradores\Beethoven.cs" />
+    <Compile Include="Narradores\Mozart.cs" />
+    <Compile Include="Narradores\NarradorPadrao.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

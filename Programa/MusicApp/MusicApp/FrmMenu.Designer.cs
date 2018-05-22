@@ -33,8 +33,9 @@ namespace MusicApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.plContainer = new System.Windows.Forms.Panel();
             this.plFase = new System.Windows.Forms.Panel();
+            this.pbFalas = new System.Windows.Forms.PictureBox();
+            this.pbNarrador = new System.Windows.Forms.PictureBox();
             this.BtnVoltarFases = new System.Windows.Forms.PictureBox();
-            this.LblSeila = new System.Windows.Forms.Label();
             this.plAbout = new System.Windows.Forms.Panel();
             this.BtnVoltarAbout = new System.Windows.Forms.PictureBox();
             this.plAchievement = new System.Windows.Forms.Panel();
@@ -47,7 +48,7 @@ namespace MusicApp
             this.BtnSettings = new System.Windows.Forms.Button();
             this.BtnJogar = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
-            this.BtnPraticar = new System.Windows.Forms.Button();
+            this.BtnMultiplayer = new System.Windows.Forms.Button();
             this.BtnAchievement = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.plFases = new System.Windows.Forms.Panel();
@@ -63,6 +64,8 @@ namespace MusicApp
             this.BtnMinimize = new System.Windows.Forms.Button();
             this.plContainer.SuspendLayout();
             this.plFase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFalas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarFases)).BeginInit();
             this.plAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarAbout)).BeginInit();
@@ -88,19 +91,40 @@ namespace MusicApp
             this.plContainer.Controls.Add(this.plSettings);
             this.plContainer.Controls.Add(this.plMenu);
             this.plContainer.Controls.Add(this.plFases);
-            this.plContainer.Location = new System.Drawing.Point(0, 23);
+            this.plContainer.Location = new System.Drawing.Point(0, 25);
             this.plContainer.Name = "plContainer";
-            this.plContainer.Size = new System.Drawing.Size(1106, 536);
+            this.plContainer.Size = new System.Drawing.Size(900, 452);
             this.plContainer.TabIndex = 4;
             // 
             // plFase
             // 
+            this.plFase.Controls.Add(this.pbFalas);
+            this.plFase.Controls.Add(this.pbNarrador);
             this.plFase.Controls.Add(this.BtnVoltarFases);
-            this.plFase.Controls.Add(this.LblSeila);
-            this.plFase.Location = new System.Drawing.Point(600, 31);
+            this.plFase.Location = new System.Drawing.Point(0, 0);
             this.plFase.Name = "plFase";
-            this.plFase.Size = new System.Drawing.Size(594, 332);
+            this.plFase.Size = new System.Drawing.Size(900, 450);
             this.plFase.TabIndex = 12;
+            // 
+            // pbFalas
+            // 
+            this.pbFalas.BackColor = System.Drawing.Color.Transparent;
+            this.pbFalas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbFalas.Location = new System.Drawing.Point(11, 298);
+            this.pbFalas.Name = "pbFalas";
+            this.pbFalas.Size = new System.Drawing.Size(620, 133);
+            this.pbFalas.TabIndex = 19;
+            this.pbFalas.TabStop = false;
+            // 
+            // pbNarrador
+            // 
+            this.pbNarrador.BackColor = System.Drawing.Color.Transparent;
+            this.pbNarrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbNarrador.Location = new System.Drawing.Point(642, 110);
+            this.pbNarrador.Name = "pbNarrador";
+            this.pbNarrador.Size = new System.Drawing.Size(258, 340);
+            this.pbNarrador.TabIndex = 18;
+            this.pbNarrador.TabStop = false;
             // 
             // BtnVoltarFases
             // 
@@ -114,21 +138,12 @@ namespace MusicApp
             this.BtnVoltarFases.TabStop = false;
             this.BtnVoltarFases.Click += new System.EventHandler(this.BtnVoltarFases_Click);
             // 
-            // LblSeila
-            // 
-            this.LblSeila.AutoSize = true;
-            this.LblSeila.Location = new System.Drawing.Point(177, 57);
-            this.LblSeila.Name = "LblSeila";
-            this.LblSeila.Size = new System.Drawing.Size(35, 13);
-            this.LblSeila.TabIndex = 0;
-            this.LblSeila.Text = "label1";
-            // 
             // plAbout
             // 
             this.plAbout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plAbout.Controls.Add(this.BtnVoltarAbout);
-            this.plAbout.Location = new System.Drawing.Point(697, 265);
+            this.plAbout.Location = new System.Drawing.Point(614, 380);
             this.plAbout.Name = "plAbout";
             this.plAbout.Size = new System.Drawing.Size(255, 224);
             this.plAbout.TabIndex = 10;
@@ -150,7 +165,7 @@ namespace MusicApp
             this.plAchievement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAchievement.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plAchievement.Controls.Add(this.BtnVoltarAchievement);
-            this.plAchievement.Location = new System.Drawing.Point(436, 265);
+            this.plAchievement.Location = new System.Drawing.Point(353, 380);
             this.plAchievement.Name = "plAchievement";
             this.plAchievement.Size = new System.Drawing.Size(255, 224);
             this.plAchievement.TabIndex = 9;
@@ -173,7 +188,7 @@ namespace MusicApp
             this.plSettings.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plSettings.Controls.Add(this.TrackBarVolume);
             this.plSettings.Controls.Add(this.BtnVoltarSettings);
-            this.plSettings.Location = new System.Drawing.Point(175, 265);
+            this.plSettings.Location = new System.Drawing.Point(92, 380);
             this.plSettings.Name = "plSettings";
             this.plSettings.Size = new System.Drawing.Size(255, 224);
             this.plSettings.TabIndex = 11;
@@ -186,7 +201,6 @@ namespace MusicApp
             this.TrackBarVolume.Size = new System.Drawing.Size(198, 45);
             this.TrackBarVolume.TabIndex = 1;
             this.TrackBarVolume.Value = 50;
-            this.TrackBarVolume.Scroll += new System.EventHandler(this.TrackBarVolume_Scroll);
             // 
             // BtnVoltarSettings
             // 
@@ -206,20 +220,20 @@ namespace MusicApp
             this.plMenu.Controls.Add(this.BtnSettings);
             this.plMenu.Controls.Add(this.BtnJogar);
             this.plMenu.Controls.Add(this.BtnAbout);
-            this.plMenu.Controls.Add(this.BtnPraticar);
+            this.plMenu.Controls.Add(this.BtnMultiplayer);
             this.plMenu.Controls.Add(this.BtnAchievement);
             this.plMenu.Controls.Add(this.button4);
             this.plMenu.Location = new System.Drawing.Point(0, 0);
             this.plMenu.Name = "plMenu";
-            this.plMenu.Size = new System.Drawing.Size(585, 332);
+            this.plMenu.Size = new System.Drawing.Size(900, 450);
             this.plMenu.TabIndex = 7;
             // 
             // LblMenu
             // 
             this.LblMenu.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMenu.Location = new System.Drawing.Point(2, 17);
+            this.LblMenu.Location = new System.Drawing.Point(2, 50);
             this.LblMenu.Name = "LblMenu";
-            this.LblMenu.Size = new System.Drawing.Size(580, 81);
+            this.LblMenu.Size = new System.Drawing.Size(896, 81);
             this.LblMenu.TabIndex = 6;
             this.LblMenu.Text = "Musicologia";
             this.LblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,7 +243,7 @@ namespace MusicApp
             this.BtnSettings.BackgroundImage = global::MusicApp.Properties.Resources.settings;
             this.BtnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSettings.Location = new System.Drawing.Point(215, 282);
+            this.BtnSettings.Location = new System.Drawing.Point(373, 339);
             this.BtnSettings.Name = "BtnSettings";
             this.BtnSettings.Size = new System.Drawing.Size(32, 32);
             this.BtnSettings.TabIndex = 0;
@@ -239,7 +253,7 @@ namespace MusicApp
             // BtnJogar
             // 
             this.BtnJogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnJogar.Location = new System.Drawing.Point(129, 133);
+            this.BtnJogar.Location = new System.Drawing.Point(287, 190);
             this.BtnJogar.Name = "BtnJogar";
             this.BtnJogar.Size = new System.Drawing.Size(312, 57);
             this.BtnJogar.TabIndex = 5;
@@ -252,30 +266,30 @@ namespace MusicApp
             this.BtnAbout.BackgroundImage = global::MusicApp.Properties.Resources.info;
             this.BtnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAbout.Location = new System.Drawing.Point(291, 282);
+            this.BtnAbout.Location = new System.Drawing.Point(449, 339);
             this.BtnAbout.Name = "BtnAbout";
             this.BtnAbout.Size = new System.Drawing.Size(32, 32);
             this.BtnAbout.TabIndex = 1;
             this.BtnAbout.UseVisualStyleBackColor = true;
             this.BtnAbout.Click += new System.EventHandler(this.BtnAbout_Click);
             // 
-            // BtnPraticar
+            // BtnMultiplayer
             // 
-            this.BtnPraticar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPraticar.Location = new System.Drawing.Point(181, 198);
-            this.BtnPraticar.Name = "BtnPraticar";
-            this.BtnPraticar.Size = new System.Drawing.Size(210, 34);
-            this.BtnPraticar.TabIndex = 4;
-            this.BtnPraticar.Text = "Praticar";
-            this.BtnPraticar.UseVisualStyleBackColor = true;
-            this.BtnPraticar.Click += new System.EventHandler(this.BtnMultiplayer_Click);
+            this.BtnMultiplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMultiplayer.Location = new System.Drawing.Point(339, 255);
+            this.BtnMultiplayer.Name = "BtnMultiplayer";
+            this.BtnMultiplayer.Size = new System.Drawing.Size(210, 34);
+            this.BtnMultiplayer.TabIndex = 4;
+            this.BtnMultiplayer.Text = "Multiplayer";
+            this.BtnMultiplayer.UseVisualStyleBackColor = true;
+            this.BtnMultiplayer.Click += new System.EventHandler(this.BtnMultiplayer_Click);
             // 
             // BtnAchievement
             // 
             this.BtnAchievement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAchievement.BackgroundImage")));
             this.BtnAchievement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnAchievement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAchievement.Location = new System.Drawing.Point(253, 282);
+            this.BtnAchievement.Location = new System.Drawing.Point(411, 339);
             this.BtnAchievement.Name = "BtnAchievement";
             this.BtnAchievement.Size = new System.Drawing.Size(32, 32);
             this.BtnAchievement.TabIndex = 2;
@@ -287,7 +301,7 @@ namespace MusicApp
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(329, 282);
+            this.button4.Location = new System.Drawing.Point(487, 339);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(32, 32);
             this.button4.TabIndex = 3;
@@ -305,7 +319,7 @@ namespace MusicApp
             this.plFases.Controls.Add(this.LblFases);
             this.plFases.Location = new System.Drawing.Point(0, 0);
             this.plFases.Name = "plFases";
-            this.plFases.Size = new System.Drawing.Size(585, 332);
+            this.plFases.Size = new System.Drawing.Size(900, 450);
             this.plFases.TabIndex = 8;
             // 
             // BtnVoltarMenu
@@ -324,9 +338,9 @@ namespace MusicApp
             // 
             this.BtnFase6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase6.Location = new System.Drawing.Point(387, 221);
+            this.BtnFase6.Location = new System.Drawing.Point(571, 289);
             this.BtnFase6.Name = "BtnFase6";
-            this.BtnFase6.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase6.Size = new System.Drawing.Size(207, 88);
             this.BtnFase6.TabIndex = 15;
             this.BtnFase6.Text = "Fase 6";
             this.BtnFase6.UseVisualStyleBackColor = false;
@@ -335,9 +349,9 @@ namespace MusicApp
             // 
             this.BtnFase5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase5.Location = new System.Drawing.Point(236, 221);
+            this.BtnFase5.Location = new System.Drawing.Point(341, 289);
             this.BtnFase5.Name = "BtnFase5";
-            this.BtnFase5.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase5.Size = new System.Drawing.Size(207, 88);
             this.BtnFase5.TabIndex = 14;
             this.BtnFase5.Text = "Fase 5";
             this.BtnFase5.UseVisualStyleBackColor = false;
@@ -346,9 +360,9 @@ namespace MusicApp
             // 
             this.BtnFase4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase4.Location = new System.Drawing.Point(75, 221);
+            this.BtnFase4.Location = new System.Drawing.Point(108, 289);
             this.BtnFase4.Name = "BtnFase4";
-            this.BtnFase4.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase4.Size = new System.Drawing.Size(207, 88);
             this.BtnFase4.TabIndex = 13;
             this.BtnFase4.Text = "Fase 4";
             this.BtnFase4.UseVisualStyleBackColor = false;
@@ -357,9 +371,9 @@ namespace MusicApp
             // 
             this.BtnFase3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase3.Location = new System.Drawing.Point(387, 116);
+            this.BtnFase3.Location = new System.Drawing.Point(571, 163);
             this.BtnFase3.Name = "BtnFase3";
-            this.BtnFase3.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase3.Size = new System.Drawing.Size(207, 88);
             this.BtnFase3.TabIndex = 12;
             this.BtnFase3.Text = "Fase 3";
             this.BtnFase3.UseVisualStyleBackColor = false;
@@ -368,9 +382,9 @@ namespace MusicApp
             // 
             this.BtnFase2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase2.Location = new System.Drawing.Point(236, 116);
+            this.BtnFase2.Location = new System.Drawing.Point(341, 163);
             this.BtnFase2.Name = "BtnFase2";
-            this.BtnFase2.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase2.Size = new System.Drawing.Size(207, 88);
             this.BtnFase2.TabIndex = 11;
             this.BtnFase2.Text = "Fase 2";
             this.BtnFase2.UseVisualStyleBackColor = false;
@@ -379,9 +393,9 @@ namespace MusicApp
             // 
             this.BtnFase1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnFase1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFase1.Location = new System.Drawing.Point(75, 116);
+            this.BtnFase1.Location = new System.Drawing.Point(108, 163);
             this.BtnFase1.Name = "BtnFase1";
-            this.BtnFase1.Size = new System.Drawing.Size(109, 59);
+            this.BtnFase1.Size = new System.Drawing.Size(207, 88);
             this.BtnFase1.TabIndex = 10;
             this.BtnFase1.Text = "Fase 1";
             this.BtnFase1.UseVisualStyleBackColor = false;
@@ -389,9 +403,9 @@ namespace MusicApp
             // LblFases
             // 
             this.LblFases.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFases.Location = new System.Drawing.Point(3, 16);
+            this.LblFases.Location = new System.Drawing.Point(3, 40);
             this.LblFases.Name = "LblFases";
-            this.LblFases.Size = new System.Drawing.Size(579, 81);
+            this.LblFases.Size = new System.Drawing.Size(895, 81);
             this.LblFases.TabIndex = 8;
             this.LblFases.Text = "Fases";
             this.LblFases.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -404,9 +418,9 @@ namespace MusicApp
             this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Location = new System.Drawing.Point(1077, 0);
+            this.BtnClose.Location = new System.Drawing.Point(871, 0);
             this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(24, 24);
+            this.BtnClose.Size = new System.Drawing.Size(25, 25);
             this.BtnClose.TabIndex = 0;
             this.BtnClose.TabStop = false;
             this.BtnClose.UseVisualStyleBackColor = false;
@@ -420,9 +434,9 @@ namespace MusicApp
             this.BtnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimize.Location = new System.Drawing.Point(1049, 0);
+            this.BtnMinimize.Location = new System.Drawing.Point(843, 0);
             this.BtnMinimize.Name = "BtnMinimize";
-            this.BtnMinimize.Size = new System.Drawing.Size(24, 24);
+            this.BtnMinimize.Size = new System.Drawing.Size(25, 25);
             this.BtnMinimize.TabIndex = 0;
             this.BtnMinimize.TabStop = false;
             this.BtnMinimize.UseVisualStyleBackColor = false;
@@ -433,7 +447,7 @@ namespace MusicApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(1106, 559);
+            this.ClientSize = new System.Drawing.Size(900, 475);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.plContainer);
             this.Controls.Add(this.BtnMinimize);
@@ -446,7 +460,8 @@ namespace MusicApp
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseUp);
             this.plContainer.ResumeLayout(false);
             this.plFase.ResumeLayout(false);
-            this.plFase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFalas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarFases)).EndInit();
             this.plAbout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarAbout)).EndInit();
@@ -471,7 +486,7 @@ namespace MusicApp
         private System.Windows.Forms.Button BtnSettings;
         private System.Windows.Forms.Button BtnJogar;
         private System.Windows.Forms.Button BtnAbout;
-        private System.Windows.Forms.Button BtnPraticar;
+        private System.Windows.Forms.Button BtnMultiplayer;
         private System.Windows.Forms.Button BtnAchievement;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel plMenu;
@@ -491,8 +506,9 @@ namespace MusicApp
         private System.Windows.Forms.PictureBox BtnVoltarAchievement;
         private System.Windows.Forms.PictureBox BtnVoltarSettings;
         private System.Windows.Forms.Panel plFase;
-        private System.Windows.Forms.Label LblSeila;
         private System.Windows.Forms.PictureBox BtnVoltarFases;
         private System.Windows.Forms.TrackBar TrackBarVolume;
+        private System.Windows.Forms.PictureBox pbNarrador;
+        private System.Windows.Forms.PictureBox pbFalas;
     }
 }

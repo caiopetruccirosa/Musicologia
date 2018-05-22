@@ -1,0 +1,15 @@
+Fase 1:
+O que é música;
+Fase 2:
+Elementos da música (melodia, harmonia, ritmo);
+Fase 3:
+Notas musicais (escala de dó);
+Fase 4:
+Escalas musicais;
+Fase 5:
+Partitura;
+Compasso;
+Figuras musicais (semibreve, colcheia, ...);
+Fase 6:
+Montando partituras;
+Exemplos;

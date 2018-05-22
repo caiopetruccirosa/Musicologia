@@ -8,10 +8,12 @@ using CSCore.SoundOut;
 
 namespace MusicApp
 {
-    public class Player
+    public class Player : IDisposable
     {
-        private int _Volume;
-        public int Volume
+        private float _Volume;
+        private List<WasapiOut> playlist;
+
+        public float Volume
         {
             get
             {
@@ -22,39 +24,49 @@ namespace MusicApp
                 if (value < 0)
                     throw new ArgumentOutOfRangeException();
 
-                if (value > 100)
+                if (value > 1)
                     throw new ArgumentOutOfRangeException();
 
                 this._Volume = value;
             }
         }
 
+        private void Remover(WasapiOut w)
+        {
+            if (w == null)
+                throw new Exception("Som nulo");
+
+            if (w.PlaybackState != PlaybackState.Stopped)
+                w.Stop();
+
+            this.playlist.Remove(w);
+            w.Dispose();
+        }
+
         public Player()
         {
-            this.Volume = 50;
+            this.playlist = new List<WasapiOut>();
+            this.Volume = (float)0.50;
         }
 
-        private void Tocar(string source)
+        public void Tocar(string source)
         {
             WasapiOut som = new WasapiOut();
-            som.Initialize(CodecFactory.Instance.GetCodec("../../../../../"+source));
+            som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/"+source));
             som.Volume = this.Volume;
             som.Play();
+
+            this.playlist.Add(som);
+            som.Stopped += (sender, e) => this.Remover(som);
         }
 
-        public void Remover(object sender, EventArgs e)
+        public void Dispose()
         {
-            Tocar("Sons/PianoNotes/A.mp3");
-        }
-
-        public void TocarNota()
-        {
-            Tocar("Sons/PianoNotes/A.mp3");
-        }
-
-        public void Click()
-        {
-            Tocar("Sons/buttonclick.mp3");
+            try
+            {
+                this.playlist.ForEach(this.Remover);
+            }
+            catch (Exception e) { }
         }
     }
 }

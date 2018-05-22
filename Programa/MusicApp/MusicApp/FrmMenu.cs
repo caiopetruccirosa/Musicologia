@@ -1,5 +1,6 @@
 ﻿using CSCore.Codecs;
 using CSCore.SoundOut;
+using MusicApp.Fases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,21 +15,21 @@ namespace MusicApp
 {
     public partial class FrmMenu : Form
     {
-        private int idJogador;
-        private string modo;
-        private Player player;
+        private int IdJogador;
+        private string Modo;
 
         private bool mouseDown;
         private Point lastLocation;
 
+        private FasePadrao Fase;
 
         public FrmMenu(int id)
         {
             InitializeComponent();
 
-            this.idJogador = id;
-            this.modo = "";
-            this.player = new Player();
+            this.IdJogador = id;
+            this.Modo = "";
+            this.Fase = null;
 
             plFases.Hide();
             plFase.Hide();
@@ -50,50 +51,36 @@ namespace MusicApp
                 this.ClientSize.Height / 2 - plSettings.Size.Height / 2);
         }
 
-        private void IniciarFase(int fase)
-        {           
-            LblSeila.Text = "modo: " + modo + " fase: " + fase;
-            if (this.modo == "jogar")
+        private void IniciarFase(int n)
+        {       
+            switch (n)
             {
-                switch (fase)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                }
+                case 1:
+                    this.Fase = new Fase1(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
+                case 2:
+                    //this.Fase = new Fase2(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
+                case 3:
+                    //this.Fase = new Fase3(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
+                case 4:
+                    //this.Fase = new Fase4(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
+                case 5:
+                    //this.Fase = new Fase5(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
+                case 6:
+                    //this.Fase = new Fase6(plFase, pbNarrador, pbFalas, TrackBarVolume.Value);
+                    //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
+                    break;
             }
-            else if (this.modo == "multiplayer")
-            {
-                switch (fase)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                }
-            }
-        }
-
-        private void TrackBarVolume_Scroll(object sender, EventArgs e)
-        {
-            this.player.Volume = TrackBarVolume.Value;
+            
         }
 
         // Eventos dos botões do menu
@@ -140,7 +127,7 @@ namespace MusicApp
             LblFases.Text = "Jogar";
 
             // carregar a área
-            int fase = Engine.BDActions.QualFase(this.idJogador);
+            int fase = Engine.BDActions.QualFase(this.IdJogador);
             for (int i = 0; i < fases.Length; i++)
             {
                 if (i <= fase-1)
@@ -165,21 +152,7 @@ namespace MusicApp
             plFases.Hide();
             plFase.Show();
 
-            this.modo = "multiplayer";
-
-            Button btn = (Button)sender;
-            if (btn == BtnFase1)
-                IniciarFase(1);
-            else if (btn == BtnFase2)
-                IniciarFase(2);
-            else if (btn == BtnFase3)
-                IniciarFase(3);
-            else if (btn == BtnFase4)
-                IniciarFase(4);
-            else if (btn == BtnFase5)
-                IniciarFase(5);
-            else if (btn == BtnFase6)
-                IniciarFase(6);
+            this.Modo = "multiplayer";
         }
 
         private void Click_Jogar(object sender, EventArgs e)
@@ -187,7 +160,7 @@ namespace MusicApp
             plFases.Hide();
             plFase.Show();
 
-            this.modo = "jogar";
+            this.Modo = "jogar";
 
             Button btn = (Button)sender;
             if (btn == BtnFase1)
@@ -209,24 +182,23 @@ namespace MusicApp
 
         private void BtnVoltarFases_Click(object sender, EventArgs e)
         {
-            if (this.modo == "jogar")
-                PrepararControlesJogar();
-            else if (this.modo == "multiplayer")
-                PrepararControlesMultiplayer();
+            if (this.Fase != null && this.Fase.Sair())
+            {
+                if (this.Modo == "jogar")
+                    PrepararControlesJogar();
+                else if (this.Modo == "multiplayer")
+                    PrepararControlesMultiplayer();
 
-            plFase.Hide();
-            plFases.Show();
-
-            this.player.Click();
+                plFase.Hide();
+                plFases.Show();
+            }
         }
 
         private void BtnVoltarMenu_Click(object sender, EventArgs e)
         {
             plFases.Hide();
             plMenu.Show();
-            this.modo = "";
-
-            this.player.Click();
+            this.Modo = "";
         }
 
         // Eventos extras do menu
