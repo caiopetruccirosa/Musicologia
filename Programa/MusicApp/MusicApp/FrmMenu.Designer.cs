@@ -32,8 +32,11 @@ namespace MusicApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.plContainer = new System.Windows.Forms.Panel();
+            this.plMultiplayer = new System.Windows.Forms.Panel();
+            this.BtnVoltarMenuMultiplayer = new System.Windows.Forms.PictureBox();
+            this.LblMultiplayer = new System.Windows.Forms.Label();
             this.plFase = new System.Windows.Forms.Panel();
-            this.pbFalas = new System.Windows.Forms.PictureBox();
+            this.lblFalas = new System.Windows.Forms.Label();
             this.pbNarrador = new System.Windows.Forms.PictureBox();
             this.BtnVoltarFases = new System.Windows.Forms.PictureBox();
             this.plAbout = new System.Windows.Forms.Panel();
@@ -52,7 +55,7 @@ namespace MusicApp
             this.BtnAchievement = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.plFases = new System.Windows.Forms.Panel();
-            this.BtnVoltarMenu = new System.Windows.Forms.PictureBox();
+            this.BtnVoltarMenuFases = new System.Windows.Forms.PictureBox();
             this.BtnFase6 = new System.Windows.Forms.Button();
             this.BtnFase5 = new System.Windows.Forms.Button();
             this.BtnFase4 = new System.Windows.Forms.Button();
@@ -62,9 +65,11 @@ namespace MusicApp
             this.LblFases = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
             this.BtnMinimize = new System.Windows.Forms.Button();
+            this.BtnFicarDisponivel = new System.Windows.Forms.Button();
             this.plContainer.SuspendLayout();
+            this.plMultiplayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuMultiplayer)).BeginInit();
             this.plFase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFalas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarFases)).BeginInit();
             this.plAbout.SuspendLayout();
@@ -76,7 +81,7 @@ namespace MusicApp
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarSettings)).BeginInit();
             this.plMenu.SuspendLayout();
             this.plFases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuFases)).BeginInit();
             this.SuspendLayout();
             // 
             // plContainer
@@ -85,6 +90,7 @@ namespace MusicApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.plContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.plContainer.Controls.Add(this.plMultiplayer);
             this.plContainer.Controls.Add(this.plFase);
             this.plContainer.Controls.Add(this.plAbout);
             this.plContainer.Controls.Add(this.plAchievement);
@@ -93,12 +99,44 @@ namespace MusicApp
             this.plContainer.Controls.Add(this.plFases);
             this.plContainer.Location = new System.Drawing.Point(0, 25);
             this.plContainer.Name = "plContainer";
-            this.plContainer.Size = new System.Drawing.Size(900, 452);
+            this.plContainer.Size = new System.Drawing.Size(973, 655);
             this.plContainer.TabIndex = 4;
+            // 
+            // plMultiplayer
+            // 
+            this.plMultiplayer.Controls.Add(this.BtnFicarDisponivel);
+            this.plMultiplayer.Controls.Add(this.BtnVoltarMenuMultiplayer);
+            this.plMultiplayer.Controls.Add(this.LblMultiplayer);
+            this.plMultiplayer.Location = new System.Drawing.Point(0, 0);
+            this.plMultiplayer.Name = "plMultiplayer";
+            this.plMultiplayer.Size = new System.Drawing.Size(900, 450);
+            this.plMultiplayer.TabIndex = 13;
+            // 
+            // BtnVoltarMenuMultiplayer
+            // 
+            this.BtnVoltarMenuMultiplayer.BackgroundImage = global::MusicApp.Properties.Resources.back;
+            this.BtnVoltarMenuMultiplayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnVoltarMenuMultiplayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVoltarMenuMultiplayer.Location = new System.Drawing.Point(15, 15);
+            this.BtnVoltarMenuMultiplayer.Name = "BtnVoltarMenuMultiplayer";
+            this.BtnVoltarMenuMultiplayer.Size = new System.Drawing.Size(52, 50);
+            this.BtnVoltarMenuMultiplayer.TabIndex = 19;
+            this.BtnVoltarMenuMultiplayer.TabStop = false;
+            this.BtnVoltarMenuMultiplayer.Click += new System.EventHandler(this.BtnVoltarMenuMultiplayer_Click);
+            // 
+            // LblMultiplayer
+            // 
+            this.LblMultiplayer.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMultiplayer.Location = new System.Drawing.Point(3, 40);
+            this.LblMultiplayer.Name = "LblMultiplayer";
+            this.LblMultiplayer.Size = new System.Drawing.Size(895, 81);
+            this.LblMultiplayer.TabIndex = 18;
+            this.LblMultiplayer.Text = "Multiplayer";
+            this.LblMultiplayer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // plFase
             // 
-            this.plFase.Controls.Add(this.pbFalas);
+            this.plFase.Controls.Add(this.lblFalas);
             this.plFase.Controls.Add(this.pbNarrador);
             this.plFase.Controls.Add(this.BtnVoltarFases);
             this.plFase.Location = new System.Drawing.Point(0, 0);
@@ -106,23 +144,24 @@ namespace MusicApp
             this.plFase.Size = new System.Drawing.Size(900, 450);
             this.plFase.TabIndex = 12;
             // 
-            // pbFalas
+            // lblFalas
             // 
-            this.pbFalas.BackColor = System.Drawing.Color.Transparent;
-            this.pbFalas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbFalas.Location = new System.Drawing.Point(11, 298);
-            this.pbFalas.Name = "pbFalas";
-            this.pbFalas.Size = new System.Drawing.Size(620, 133);
-            this.pbFalas.TabIndex = 19;
-            this.pbFalas.TabStop = false;
+            this.lblFalas.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFalas.Location = new System.Drawing.Point(7, 349);
+            this.lblFalas.Name = "lblFalas";
+            this.lblFalas.Size = new System.Drawing.Size(629, 92);
+            this.lblFalas.TabIndex = 19;
+            this.lblFalas.Text = "Falas";
+            this.lblFalas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbNarrador
             // 
             this.pbNarrador.BackColor = System.Drawing.Color.Transparent;
-            this.pbNarrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbNarrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbNarrador.Location = new System.Drawing.Point(642, 110);
             this.pbNarrador.Name = "pbNarrador";
             this.pbNarrador.Size = new System.Drawing.Size(258, 340);
+            this.pbNarrador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbNarrador.TabIndex = 18;
             this.pbNarrador.TabStop = false;
             // 
@@ -143,7 +182,7 @@ namespace MusicApp
             this.plAbout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plAbout.Controls.Add(this.BtnVoltarAbout);
-            this.plAbout.Location = new System.Drawing.Point(614, 380);
+            this.plAbout.Location = new System.Drawing.Point(650, 481);
             this.plAbout.Name = "plAbout";
             this.plAbout.Size = new System.Drawing.Size(255, 224);
             this.plAbout.TabIndex = 10;
@@ -165,7 +204,7 @@ namespace MusicApp
             this.plAchievement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAchievement.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plAchievement.Controls.Add(this.BtnVoltarAchievement);
-            this.plAchievement.Location = new System.Drawing.Point(353, 380);
+            this.plAchievement.Location = new System.Drawing.Point(389, 481);
             this.plAchievement.Name = "plAchievement";
             this.plAchievement.Size = new System.Drawing.Size(255, 224);
             this.plAchievement.TabIndex = 9;
@@ -188,7 +227,7 @@ namespace MusicApp
             this.plSettings.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.plSettings.Controls.Add(this.TrackBarVolume);
             this.plSettings.Controls.Add(this.BtnVoltarSettings);
-            this.plSettings.Location = new System.Drawing.Point(92, 380);
+            this.plSettings.Location = new System.Drawing.Point(128, 481);
             this.plSettings.Name = "plSettings";
             this.plSettings.Size = new System.Drawing.Size(255, 224);
             this.plSettings.TabIndex = 11;
@@ -309,7 +348,7 @@ namespace MusicApp
             // 
             // plFases
             // 
-            this.plFases.Controls.Add(this.BtnVoltarMenu);
+            this.plFases.Controls.Add(this.BtnVoltarMenuFases);
             this.plFases.Controls.Add(this.BtnFase6);
             this.plFases.Controls.Add(this.BtnFase5);
             this.plFases.Controls.Add(this.BtnFase4);
@@ -322,17 +361,17 @@ namespace MusicApp
             this.plFases.Size = new System.Drawing.Size(900, 450);
             this.plFases.TabIndex = 8;
             // 
-            // BtnVoltarMenu
+            // BtnVoltarMenuFases
             // 
-            this.BtnVoltarMenu.BackgroundImage = global::MusicApp.Properties.Resources.back;
-            this.BtnVoltarMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnVoltarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnVoltarMenu.Location = new System.Drawing.Point(15, 15);
-            this.BtnVoltarMenu.Name = "BtnVoltarMenu";
-            this.BtnVoltarMenu.Size = new System.Drawing.Size(52, 50);
-            this.BtnVoltarMenu.TabIndex = 16;
-            this.BtnVoltarMenu.TabStop = false;
-            this.BtnVoltarMenu.Click += new System.EventHandler(this.BtnVoltarMenu_Click);
+            this.BtnVoltarMenuFases.BackgroundImage = global::MusicApp.Properties.Resources.back;
+            this.BtnVoltarMenuFases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnVoltarMenuFases.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVoltarMenuFases.Location = new System.Drawing.Point(15, 15);
+            this.BtnVoltarMenuFases.Name = "BtnVoltarMenuFases";
+            this.BtnVoltarMenuFases.Size = new System.Drawing.Size(52, 50);
+            this.BtnVoltarMenuFases.TabIndex = 16;
+            this.BtnVoltarMenuFases.TabStop = false;
+            this.BtnVoltarMenuFases.Click += new System.EventHandler(this.BtnVoltarMenuFases_Click);
             // 
             // BtnFase6
             // 
@@ -418,7 +457,7 @@ namespace MusicApp
             this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Location = new System.Drawing.Point(871, 0);
+            this.BtnClose.Location = new System.Drawing.Point(944, 0);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(25, 25);
             this.BtnClose.TabIndex = 0;
@@ -434,7 +473,7 @@ namespace MusicApp
             this.BtnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimize.Location = new System.Drawing.Point(843, 0);
+            this.BtnMinimize.Location = new System.Drawing.Point(916, 0);
             this.BtnMinimize.Name = "BtnMinimize";
             this.BtnMinimize.Size = new System.Drawing.Size(25, 25);
             this.BtnMinimize.TabIndex = 0;
@@ -442,12 +481,23 @@ namespace MusicApp
             this.BtnMinimize.UseVisualStyleBackColor = false;
             this.BtnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
             // 
+            // BtnFicarDisponivel
+            // 
+            this.BtnFicarDisponivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFicarDisponivel.Location = new System.Drawing.Point(683, 163);
+            this.BtnFicarDisponivel.Name = "BtnFicarDisponivel";
+            this.BtnFicarDisponivel.Size = new System.Drawing.Size(113, 65);
+            this.BtnFicarDisponivel.TabIndex = 20;
+            this.BtnFicarDisponivel.Text = "Ficar Disponível";
+            this.BtnFicarDisponivel.UseVisualStyleBackColor = true;
+            this.BtnFicarDisponivel.Click += new System.EventHandler(this.BtnFicarDisponivel_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(900, 475);
+            this.ClientSize = new System.Drawing.Size(973, 678);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.plContainer);
             this.Controls.Add(this.BtnMinimize);
@@ -459,8 +509,9 @@ namespace MusicApp
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMenu_MouseUp);
             this.plContainer.ResumeLayout(false);
+            this.plMultiplayer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuMultiplayer)).EndInit();
             this.plFase.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbFalas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarFases)).EndInit();
             this.plAbout.ResumeLayout(false);
@@ -473,7 +524,7 @@ namespace MusicApp
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarSettings)).EndInit();
             this.plMenu.ResumeLayout(false);
             this.plFases.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuFases)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,7 +552,7 @@ namespace MusicApp
         private System.Windows.Forms.Panel plSettings;
         private System.Windows.Forms.Panel plAbout;
         private System.Windows.Forms.Panel plAchievement;
-        private System.Windows.Forms.PictureBox BtnVoltarMenu;
+        private System.Windows.Forms.PictureBox BtnVoltarMenuFases;
         private System.Windows.Forms.PictureBox BtnVoltarAbout;
         private System.Windows.Forms.PictureBox BtnVoltarAchievement;
         private System.Windows.Forms.PictureBox BtnVoltarSettings;
@@ -509,6 +560,10 @@ namespace MusicApp
         private System.Windows.Forms.PictureBox BtnVoltarFases;
         private System.Windows.Forms.TrackBar TrackBarVolume;
         private System.Windows.Forms.PictureBox pbNarrador;
-        private System.Windows.Forms.PictureBox pbFalas;
+        private System.Windows.Forms.Label lblFalas;
+        private System.Windows.Forms.Panel plMultiplayer;
+        private System.Windows.Forms.PictureBox BtnVoltarMenuMultiplayer;
+        private System.Windows.Forms.Label LblMultiplayer;
+        private System.Windows.Forms.Button BtnFicarDisponivel;
     }
 }

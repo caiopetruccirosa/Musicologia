@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Net;
 
 namespace Engine
 {
@@ -20,7 +21,7 @@ namespace Engine
         VeryStrong = 5
     }
 
-    public class BDActions
+    public static class BDActions
     {
         private static string cs = Properties.Settings.Default.BDConnectionString;
 
@@ -107,9 +108,8 @@ namespace Engine
             if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript))
                 score++;
 
-            return (PasswordScore) score;
+            return (PasswordScore)score;
         }
-
 
         ////////////////////////////////////////////
 
@@ -145,7 +145,7 @@ namespace Engine
                     else
                         return -1;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw new Exception("Erro no login");
                 }
@@ -187,12 +187,10 @@ namespace Engine
                 conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
                 // cria comando de inserção ao SQL 
-                cmd = new SqlCommand("INSERT INTO usuario VALUES(@username,  @email, @pw, @points, @fase)", conn);
+                cmd = new SqlCommand("INSERT INTO usuario VALUES(@username,  @email, @pw)", conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@pw", EncodePassword(pw));
-                cmd.Parameters.AddWithValue("@points", 0);
-                cmd.Parameters.AddWithValue("@fase", 1);
 
                 try
                 {
@@ -202,7 +200,7 @@ namespace Engine
 
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw new Exception("Erro no cadastro");
                 }
@@ -217,21 +215,111 @@ namespace Engine
             return false;
         }
 
-        public static int QualFase(int id)
+        public static void GuardarScore(int id, int fase, int score) {
+            if (fase < 1 || fase > 6)
+                throw new ArgumentOutOfRangeException();
+
+            if (score < 0 || score > 3)
+                throw new ArgumentOutOfRangeException();
+
+            // cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            SqlCommand cmd = new SqlCommand("EXEC sp_guardarscore @id, @fase, @score");
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@fase", fase);
+            cmd.Parameters.AddWithValue("@score", score);
+
+            try
+            {
+                //abre conexao
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Falha ao guardar score");
+            }
+            finally
+            {
+                //fecha conexao
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+        public static void FicarDisponivel(int id, IPAddress ip)
+        {
+            if (ip == null)
+                throw new Exception("IP nulo");
+
+            // cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            SqlCommand cmd = new SqlCommand("EXEC sp_ficardisponivel @id, @ip");
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@ip", ip.ToString());
+
+            try
+            {
+                //abre conexao
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Falha ao ficar indisponivel");
+            }
+            finally
+            {
+                //fecha conexao
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+        public static void FicarIndisponivel(int id)
+        {
+            // cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            SqlCommand cmd = new SqlCommand("EXEC sp_ficarindisponivel @id");
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                //abre conexao
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Falha ao ficar indisponivel");
+            }
+            finally
+            {
+                //fecha conexao
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
+        public static User[] UsuariosDisponiveis()
         {
             // cria conexao ao banco de dados
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
             // cria comando de consulta ao SQL 
-            SqlCommand cmd = new SqlCommand("SELECT fase FROM usuario WHERE id=@id", conn);
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlCommand cmd = new SqlCommand("EXEC sp_usuariosdisponiveis", conn);
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            DataRow dr = null;
 
-            int fase = 0;
+            User[] users = null;
             try
             {
                 //abre a conexao
@@ -239,15 +327,24 @@ namespace Engine
                 // executa a consulta
                 adapter.Fill(ds);
 
-                if (ds.Tables[0].Rows.Count > 0)
+                DataTable table = ds.Tables[0];
+                DataRow dr = null;
+
+                users = new User[table.Rows.Count];
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    dr = ds.Tables[0].Rows[0];
-                    fase = Convert.ToInt32(dr.ItemArray[0].ToString());
+                    dr = table.Rows[i];
+
+                    int id = (int)dr.ItemArray[0];
+                    string username = (string)dr.ItemArray[1];
+                    string ip = (string)dr.ItemArray[2];
+
+                    users[i] = new User(id, username, ip);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Erro no login");
+                throw new Exception("Falha ao se comunicar com o banco de dados");
             }
             finally
             {
@@ -256,7 +353,56 @@ namespace Engine
                 conn.Dispose();
             }
 
-            return fase;
+            return users;
+        }
+
+        public static FaseDados[] FasesJogadas(int id)
+        {
+            // cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            // cria comando de consulta ao SQL 
+            SqlCommand cmd = new SqlCommand("EXEC sp_selecionarfases @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+
+            FaseDados[] fases = null;
+            try
+            {
+                //abre a conexao
+                conn.Open();
+                // executa a consulta
+                adapter.Fill(ds);
+
+                DataTable table = ds.Tables[0];
+                DataRow dr = null;
+
+                fases = new FaseDados[table.Rows.Count];
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    dr = table.Rows[i];
+
+                    int numero = (int)dr.ItemArray[0];
+                    int pontuacao = (int) dr.ItemArray[1];
+
+                    fases[i] = new FaseDados(numero, pontuacao);
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Falha ao se comunicar com o banco de dados");
+            }
+            finally
+            {
+                // encerra a conexao
+                conn.Close();
+                conn.Dispose();
+            }
+
+            return fases;
         }
     }
 }

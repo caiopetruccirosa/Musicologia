@@ -1,0 +1,9 @@
+CREATE PROCEDURE sp_selecionarfases
+
+CREATE PROCEDURE sp_guardarscore
+
+CREATE PROCEDURE sp_usuariosdisponiveis
+
+CREATE PROCEDURE sp_ficardisponivel
+
+CREATE PROCEDURE sp_ficarindisponivel

@@ -9,18 +9,27 @@ using System.Windows.Forms;
 namespace MusicApp.Fases
 {
     public class Fase1 : FasePadrao
-    {        
-        public Fase1(Panel panel, PictureBox pbnarrador, PictureBox pbfalas, int volume)
+    {
+        public Fase1(Panel panel, PictureBox pbnarrador, Label lblfalas, int id, int volume)
         {
-            if (panel == null || pbnarrador == null || pbfalas == null)
+            if (panel == null || pbnarrador == null || lblfalas == null)
                 throw new Exception("Objeto nulo");
 
             this.pl = panel;
-            this.narrador = new Mozart(pbnarrador, pbfalas);
+            this.narrador = new Narrador("MOZART", pbnarrador, lblfalas);
+
+            this.idJogador = id;
 
             this.player = new Player();
             this.player.Volume = (float)volume/100;
+
+            this.pl.Refresh();
+        }
+
+        public override void Jogar()
+        {
             this.player.Tocar("Ode a Alegria.mp3");
+            this.narrador.Falar("FALAE MEU BOM COMO VC TA");
         }
     }
 }

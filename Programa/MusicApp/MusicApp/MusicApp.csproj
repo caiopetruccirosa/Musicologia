@@ -84,11 +84,8 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Narradores\Bach.cs" />
-    <Compile Include="Narradores\Beethoven.cs" />
-    <Compile Include="Narradores\Mozart.cs" />
-    <Compile Include="Narradores\NarradorPadrao.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Narrador\Narrador.cs" />
+    <Compile Include="Player\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

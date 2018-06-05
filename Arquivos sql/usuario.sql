@@ -3,6 +3,4 @@ create table usuario(
 	username varchar(50) not null,
 	email varchar(50) not null,
 	pw varchar(250) not null,
-	points int not null,
-	fase int not null
 )
