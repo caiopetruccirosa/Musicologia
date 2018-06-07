@@ -27,7 +27,12 @@ namespace MusicApp
                 if (value > 1)
                     throw new ArgumentOutOfRangeException();
 
+                float proporcao = value - this.Volume;
                 this._Volume = value;
+
+                this.playlist.ForEach((w) => {
+                    w.Volume = (float) w.Volume + proporcao;
+                });
             }
         }
 
@@ -39,14 +44,25 @@ namespace MusicApp
             if (w.PlaybackState != PlaybackState.Stopped)
                 w.Stop();
 
-            this.playlist.Remove(w);
-            w.Dispose();
+            try
+            {
+                this.playlist.Remove(w);
+                w.Dispose();
+            }
+            catch (Exception)
+            { }
         }
 
-        public Player()
+        public Player(float volume)
         {
+                if (volume < 0)
+                    throw new ArgumentOutOfRangeException();
+
+                if (volume > 1)
+                    throw new ArgumentOutOfRangeException();
+
             this.playlist = new List<WasapiOut>();
-            this.Volume = (float)0.50;
+            this.Volume = volume;
         }
 
         public void Tocar(string source)
@@ -60,13 +76,77 @@ namespace MusicApp
             som.Stopped += (sender, e) => this.Remover(som);
         }
 
+        public void TocarMusicaDeFundo(int n)
+        {
+            try
+            {
+                WasapiOut som = new WasapiOut();
+                switch (n)
+                {
+                    case 0:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Cello Suite n1.mp3"));
+                        break;
+                    case 1:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Ode to Joy.mp3"));
+                        break;
+                    case 2:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Symphony n40.mp3"));
+                        break;
+                    case 3:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Cello Suite n1.mp3"));
+                        break;
+                    case 4:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Hungarian Dance.mp3"));
+                        break;
+                    case 5:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Spring Allegro n1.mp3"));
+                        break;
+                    case 6:
+                        som.Initialize(CodecFactory.Instance.GetCodec("../../../../../Sons/MusicasDeFundo/Swan Lake Act II.mp3"));
+                        break;
+                }
+                som.Volume = this.Volume;
+                som.Play();
+
+                this.playlist.Add(som);
+                som.Stopped += (sender, e) => {
+                    this.Remover(som);
+                    if (this.playlist != null)
+                        this.TocarMusicaDeFundo(n);
+                };
+            }
+            catch (Exception)
+            { }
+        }
+
+        public void Pause()
+        {
+            try
+            {
+                this.playlist.ForEach((w) => {
+                    w.Pause();
+                });
+            }
+            catch (Exception) { }
+        }
+
+        public void Resume()
+        {
+            this.playlist.ForEach((w) => {
+                w.Resume();
+            });
+        }
+
         public void Dispose()
         {
             try
             {
                 this.playlist.ForEach(this.Remover);
             }
-            catch (Exception e) { }
+            catch (Exception) { }
+
+            this.Volume = 0;
+            this.playlist = null;
         }
     }
 }

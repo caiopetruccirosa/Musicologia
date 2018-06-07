@@ -215,6 +215,47 @@ namespace Engine
             return false;
         }
 
+        public static string[] CarregarAlternativas(int numeroFase, int numeroPergunta) {
+			// cria conexao ao banco de dados
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
+
+            // cria comando de consulta ao SQL 
+            SqlCommand cmd = new SqlCommand("EXEC sp_carregaralternativas @numeroFase, @numeroPergunta", conn);
+            cmd.Parameters.AddWithValue("@numeroFase", numeroFase);
+            cmd.Parameters.AddWithValue("@numeroPergunta", numeroPergunta);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+
+            string[] alternativas = null;
+            try
+            {
+                //abre a conexao
+                conn.Open();
+                // executa a consulta
+                adapter.Fill(ds);
+
+                DataTable table = ds.Tables[0];
+
+                alternativas = new string[table.Rows.Count];
+                for (int i = 0; i < table.Rows.Count; i++)
+                    alternativas[i] = table.Rows[i].ItemArray[0];
+            }
+            catch (Exception)
+            {
+                throw new Exception("Falha ao se comunicar com o banco de dados");
+            }
+            finally
+            {
+                // encerra a conexao
+                conn.Close();
+                conn.Dispose();
+            }
+
+            return alternativas;
+        }
+
         public static void GuardarScore(int id, int fase, int score) {
             if (fase < 1 || fase > 6)
                 throw new ArgumentOutOfRangeException();

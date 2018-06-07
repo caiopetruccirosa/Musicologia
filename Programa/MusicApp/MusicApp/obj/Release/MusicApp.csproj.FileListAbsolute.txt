@@ -96,3 +96,5 @@ C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Rele
 C:\Users\u17197\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
 Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.dll
 Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.xml
+C:\Users\U17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Release\CSCore.dll
+C:\Users\U17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Release\CSCore.xml

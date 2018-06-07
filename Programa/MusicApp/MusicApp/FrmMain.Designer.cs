@@ -39,7 +39,6 @@
             this.TxtCadUsername = new System.Windows.Forms.TextBox();
             this.PlLogin = new System.Windows.Forms.Panel();
             this.LblAvisoLogin = new System.Windows.Forms.Label();
-            this.LblEsqueci = new System.Windows.Forms.Label();
             this.LblCadastro = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.TxtLogPassword = new System.Windows.Forms.TextBox();
@@ -51,14 +50,14 @@
             // 
             // plName
             // 
-            this.plName.BackColor = System.Drawing.SystemColors.Highlight;
+            this.plName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.plName.Controls.Add(this.BtnMin);
             this.plName.Controls.Add(this.BtnClose);
             this.plName.Controls.Add(this.lbNome);
             this.plName.Dock = System.Windows.Forms.DockStyle.Top;
             this.plName.Location = new System.Drawing.Point(0, 0);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(432, 69);
+            this.plName.Size = new System.Drawing.Size(429, 69);
             this.plName.TabIndex = 3;
             // 
             // BtnMin
@@ -96,6 +95,7 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.lbNome.Location = new System.Drawing.Point(107, 6);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(219, 57);
@@ -122,6 +122,7 @@
             // LblPWStrength
             // 
             this.LblPWStrength.Font = new System.Drawing.Font("Lucida Console", 9F);
+            this.LblPWStrength.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblPWStrength.Location = new System.Drawing.Point(39, 107);
             this.LblPWStrength.Name = "LblPWStrength";
             this.LblPWStrength.Size = new System.Drawing.Size(279, 16);
@@ -145,6 +146,7 @@
             // 
             this.LblLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblLogin.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Underline);
+            this.LblLogin.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblLogin.Location = new System.Drawing.Point(41, 260);
             this.LblLogin.Name = "LblLogin";
             this.LblLogin.Size = new System.Drawing.Size(276, 21);
@@ -156,7 +158,7 @@
             // LblPWErro
             // 
             this.LblPWErro.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPWErro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LblPWErro.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblPWErro.Location = new System.Drawing.Point(41, 155);
             this.LblPWErro.Name = "LblPWErro";
             this.LblPWErro.Size = new System.Drawing.Size(277, 12);
@@ -203,14 +205,19 @@
             // 
             // BtnCadastrar
             // 
+            this.BtnCadastrar.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.BtnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCadastrar.FlatAppearance.BorderSize = 0;
+            this.BtnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
             this.BtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCadastrar.Location = new System.Drawing.Point(41, 216);
+            this.BtnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCadastrar.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.BtnCadastrar.Location = new System.Drawing.Point(41, 206);
             this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(276, 35);
+            this.BtnCadastrar.Size = new System.Drawing.Size(276, 46);
             this.BtnCadastrar.TabIndex = 9;
             this.BtnCadastrar.Text = "Cadastrar";
-            this.BtnCadastrar.UseVisualStyleBackColor = true;
+            this.BtnCadastrar.UseVisualStyleBackColor = false;
             this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // TxtCadUsername
@@ -229,11 +236,11 @@
             // 
             this.PlLogin.BackColor = System.Drawing.Color.Transparent;
             this.PlLogin.Controls.Add(this.LblAvisoLogin);
-            this.PlLogin.Controls.Add(this.LblEsqueci);
             this.PlLogin.Controls.Add(this.LblCadastro);
             this.PlLogin.Controls.Add(this.BtnLogin);
             this.PlLogin.Controls.Add(this.TxtLogPassword);
             this.PlLogin.Controls.Add(this.TxtLogEmail);
+            this.PlLogin.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.PlLogin.Location = new System.Drawing.Point(36, 82);
             this.PlLogin.Name = "PlLogin";
             this.PlLogin.Size = new System.Drawing.Size(360, 291);
@@ -250,25 +257,13 @@
             this.LblAvisoLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LblAvisoLogin.Visible = false;
             // 
-            // LblEsqueci
-            // 
-            this.LblEsqueci.AutoSize = true;
-            this.LblEsqueci.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblEsqueci.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEsqueci.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblEsqueci.Location = new System.Drawing.Point(199, 205);
-            this.LblEsqueci.Name = "LblEsqueci";
-            this.LblEsqueci.Size = new System.Drawing.Size(110, 12);
-            this.LblEsqueci.TabIndex = 20;
-            this.LblEsqueci.Text = "Esqueci a senha";
-            // 
             // LblCadastro
             // 
             this.LblCadastro.AutoSize = true;
             this.LblCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblCadastro.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCadastro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LblCadastro.Location = new System.Drawing.Point(47, 205);
+            this.LblCadastro.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblCadastro.Location = new System.Drawing.Point(113, 206);
             this.LblCadastro.Name = "LblCadastro";
             this.LblCadastro.Size = new System.Drawing.Size(124, 12);
             this.LblCadastro.TabIndex = 19;
@@ -277,14 +272,19 @@
             // 
             // BtnLogin
             // 
+            this.BtnLogin.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLogin.FlatAppearance.BorderSize = 0;
+            this.BtnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.BtnLogin.Location = new System.Drawing.Point(49, 147);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(260, 35);
+            this.BtnLogin.Size = new System.Drawing.Size(260, 43);
             this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Entrar";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // TxtLogPassword
@@ -312,9 +312,10 @@
             // 
             // FrmMain
             // 
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(432, 396);
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::MusicApp.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(429, 396);
             this.Controls.Add(this.PlLogin);
             this.Controls.Add(this.PlCadastro);
             this.Controls.Add(this.plName);
@@ -359,7 +360,6 @@
         private System.Windows.Forms.Button BtnCadastrar;
         private System.Windows.Forms.TextBox TxtCadUsername;
         private System.Windows.Forms.Panel PlLogin;
-        private System.Windows.Forms.Label LblEsqueci;
         private System.Windows.Forms.Label LblCadastro;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.TextBox TxtLogPassword;

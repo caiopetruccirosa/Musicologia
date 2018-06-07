@@ -1,17 +1,11 @@
-﻿using CSCore.Codecs;
-using CSCore.SoundOut;
+﻿using Engine;
 using MusicApp.Fases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicApp
@@ -23,6 +17,9 @@ namespace MusicApp
         private bool mouseDown;
         private Point lastLocation;
 
+        private Player player;
+        private float volume;
+
         private FasePadrao Fase;
 
         public FrmMenu(int id)
@@ -31,6 +28,11 @@ namespace MusicApp
 
             this.Id = id;
             this.Fase = null;
+
+            this.volume = (float)TrackBarVolume.Value / 100;
+
+            this.player = new Player(this.volume);
+            this.player.TocarMusicaDeFundo(0);
 
             plMultiplayer.Hide();
             plFases.Hide();
@@ -45,12 +47,12 @@ namespace MusicApp
                 this.ClientSize.Height / 2 - plSettings.Size.Height / 2);
 
             plAbout.Location = new Point(
-                this.ClientSize.Width / 2 - plSettings.Size.Width / 2,
-                this.ClientSize.Height / 2 - plSettings.Size.Height / 2);
+                this.ClientSize.Width / 2 - plAbout.Size.Width / 2,
+                this.ClientSize.Height / 2 - plAbout.Size.Height / 2);
 
             plAchievement.Location = new Point(
-                this.ClientSize.Width / 2 - plSettings.Size.Width / 2,
-                this.ClientSize.Height / 2 - plSettings.Size.Height / 2);
+                this.ClientSize.Width / 2 - plAchievement.Size.Width / 2,
+                this.ClientSize.Height / 2 - plAchievement.Size.Height / 2);
         }
 
         private IPAddress LocalIPAddress()
@@ -66,38 +68,26 @@ namespace MusicApp
         {       
             if (this.Fase == null)
             {
+                this.player.Pause();
                 switch (n)
                 {
                     case 1:
-                        this.Fase = new Fase1(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
-                        this.Fase.Jogar();
+                        this.Fase = new Fase1(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                     case 2:
-                        this.Fase = new Fase2(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
+                        this.Fase = new Fase2(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                     case 3:
-                        this.Fase = new Fase3(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
+                        this.Fase = new Fase3(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                     case 4:
-                        this.Fase = new Fase4(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
+                        this.Fase = new Fase4(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                     case 5:
-                        this.Fase = new Fase5(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
+                        this.Fase = new Fase5(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                     case 6:
-                        this.Fase = new Fase6(plFase, pbNarrador, lblFalas, this.Id, TrackBarVolume.Value);
-                        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fase.SairFechandoForm);
-                        this.Fase.Jogar();
+                        this.Fase = new Fase6(plFase, pbNarrador, lblFalas, this.Id, volume);
                         break;
                 }
             }            
@@ -112,6 +102,7 @@ namespace MusicApp
             
             plMenu.Hide();
             plMultiplayer.Hide();
+            plFase.Hide();
             plFases.Show();
         }
 
@@ -121,6 +112,7 @@ namespace MusicApp
 
             plMenu.Hide();
             plFases.Hide();
+            plFase.Hide();
             plMultiplayer.Show();
         }
 
@@ -134,21 +126,42 @@ namespace MusicApp
         private void PrepararControlesJogar()
         {
             Button[] fases = { BtnFase1, BtnFase2, BtnFase3, BtnFase4, BtnFase5, BtnFase6 };
+            FaseDados[] fasesJogadas = Engine.BDActions.FasesJogadas(this.Id);
+            
+            for (int i = 0; i < fasesJogadas.Length; i++) {
+                FaseDados fase = fasesJogadas[i];
+                PictureBox[] estrelas = new PictureBox[fase.Pontuacao];
 
-            // carregar a área
-            int fase = 6;//Engine.BDActions.FasesJogadas(this.IdJogador);
+                int offsetX = fases[i].Width - 25;
+                int offsetY = fases[i].Height - 25;
+                for (int j = 0; j < estrelas.Length; j++)
+                {
+                    estrelas[j] = new PictureBox();
+                    estrelas[j].BackColor = System.Drawing.Color.Transparent;
+                    estrelas[j].BackgroundImage = global::MusicApp.Properties.Resources.goldenstar;
+                    estrelas[j].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+                    estrelas[j].Size = new System.Drawing.Size(20, 20);
+                    estrelas[j].Location = new System.Drawing.Point(offsetX, offsetY);
+
+                    offsetX -= estrelas[j].Width;
+
+                    fases[i].Controls.Add(estrelas[j]);
+                }
+                fases[i].Refresh();
+            }
+
             for (int i = 0; i < fases.Length; i++)
             {
-                if (i <= fase-1)
+                if (i < fasesJogadas.Length + 1)
                 {
                     fases[i].Enabled = true;
-                    fases[i].BackColor = SystemColors.HotTrack;
+                    fases[i].BackColor = System.Drawing.Color.DarkGoldenrod;
                     fases[i].Click += new System.EventHandler(this.Click_Jogar);
                 }
-                else 
+                else
                 {
                     fases[i].Enabled = false;
-                    fases[i].BackColor = SystemColors.InactiveCaption;
+                    fases[i].BackColor = System.Drawing.Color.SandyBrown;
                 }
             }
         }
@@ -197,6 +210,8 @@ namespace MusicApp
             if (this.Fase != null && this.Fase.Sair())
             {
                 this.Fase = null;
+
+                this.player.Resume();
 
                 PrepararControlesJogar();
 
@@ -316,6 +331,25 @@ namespace MusicApp
 
                 this.Update();
             }
+        }
+
+        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Fase != null && !this.Fase.Sair())
+                e.Cancel = true;
+
+            if (this.player != null)
+                this.player.Dispose();
+            this.player = null;
+        }
+
+        private void TrackBarVolume_Scroll(object sender, EventArgs e)
+        {
+            this.LblVolume.Text = "Volume: " + TrackBarVolume.Value;
+
+            this.volume = (float)TrackBarVolume.Value / 100;
+            if (this.player != null)
+                this.player.Volume = this.volume;
         }
     }
 }
