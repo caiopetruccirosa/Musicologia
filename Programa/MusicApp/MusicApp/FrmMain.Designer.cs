@@ -281,7 +281,7 @@
             this.BtnLogin.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.BtnLogin.Location = new System.Drawing.Point(49, 147);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(260, 43);
+            this.BtnLogin.Size = new System.Drawing.Size(260, 45);
             this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Entrar";
             this.BtnLogin.UseVisualStyleBackColor = false;

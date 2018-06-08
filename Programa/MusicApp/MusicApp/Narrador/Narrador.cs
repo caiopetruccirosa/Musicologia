@@ -16,6 +16,7 @@ namespace MusicApp.Narradores
         protected Label lblfalas;
 
         protected Queue<string> falas;
+        protected Queue<string> perguntas;
 
         public bool estaFalando;
         public bool podeFalar;
@@ -29,6 +30,7 @@ namespace MusicApp.Narradores
             this.lblfalas = lblfalas;
 
             this.falas = new Queue<string>();
+            this.perguntas = new Queue<string>();
 
             this.estaFalando = false;
             this.podeFalar = true;
@@ -44,19 +46,21 @@ namespace MusicApp.Narradores
                     case "BEETHOVEN":
                         this.pbdesenho.Image = Image.FromFile("../../../../../Fotos/Imagens/Beethoven.png");
 
-                        this.falas.Enqueue("Olá! Meu nome é Ludwig Van Beethoven. Mas pode me chamar só de Beethoven, ou Beto");
+                        this.falas.Enqueue("Olá! Meu nome é Ludwig Van Beethoven. Mas pode me chamar só de Beethoven, ou Beto.");
                         this.falas.Enqueue("Fui um músico alemão, e sou famoso até hoje pela minha obra, a qual você está escutando agora :)");
                         this.falas.Enqueue("O que acha de aprender mais sobre essa fantástica arte?");
                         this.falas.Enqueue("Estou aqui para ensinar para você sobre a história da música e como ela está presente nas nossas vidas!");
                         
                         this.falas.Enqueue("A humanidade faz música desde sua origem, há 40 mil anos atrás! Incrível, não?");
                         this.falas.Enqueue("Vamos descobrir o que você aprendeu agora.");
+
+                        this.perguntas.Enqueue("");
                         break;
                     case "MOZART":
                         this.pbdesenho.Image = Image.FromFile("../../../../../Fotos/Imagens/Mozart.png");
 
                         this.falas.Enqueue("Ah você é a pessoa que o Beto me falou que quer aprender música!");
-                        this.falas.Enqueue("Meu nome é Wolfgang Amadeus Mozart, conhecido apenas como Mozart");
+                        this.falas.Enqueue("Meu nome é Wolfgang Amadeus Mozart, conhecido apenas como Mozart.");
                         this.falas.Enqueue("Estou aqui para ensinar para você sobre o que é música");
                         this.falas.Enqueue("Fui um compositor austríaco muito influente e famoso. Está gostando da minha música?");
                         this.falas.Enqueue("Bom, se você quer aprender sobre música deve saber do que ela é feita:");
@@ -74,9 +78,15 @@ namespace MusicApp.Narradores
                         this.falas.Enqueue("INTENSIDADE é ogrua de força na percussão do som.");
                         this.falas.Enqueue("TIMBRE é o que nos faz diferneciar os sons e suas características.");
                         this.falas.Enqueue("Ufa! Essa foi sua segunda aula sobre música! Agora vamos ver se você realmente aprendeu...");
+
                         break;
                     case "BACH":
                         this.pbdesenho.Image = Image.FromFile("../../../../../Fotos/Imagens/Bach.png");
+
+                        this.falas.Enqueue("o lepo leeeepoOOoOO");
+                        this.falas.Enqueue("é tao gostoso quando eu HA HA HA HA HA HA HA O LEPO LeeeeePoooooOoo");
+                        this.falas.Enqueue("Desculpa");
+
                         break;
                     case "BRAHMS":
                         this.pbdesenho.Image = Image.FromFile("../../../../../Fotos/Imagens/Brahms.png");
@@ -97,7 +107,8 @@ namespace MusicApp.Narradores
 
         public void Falar()
         {
-            if (this.falas.Count > 0) { 
+            if (this.falas.Count > 0)
+            {
                 if (!this.estaFalando)
                 {
                     this.estaFalando = true;
@@ -114,13 +125,46 @@ namespace MusicApp.Narradores
                             break;
                         }
                         this.lblfalas.Text += fala[i];
-                        Thread.Sleep(20);
+                        Thread.Sleep(70);
                         this.lblfalas.Refresh();
                     }
 
                     this.estaFalando = false;
                 }
             }
+            else
+                throw new Exception();
+        }
+
+        public void Perguntar()
+        {
+            if (this.perguntas.Count > 0)
+            {
+                if (!this.estaFalando)
+                {
+                    this.estaFalando = true;
+
+                    this.lblfalas.Text = "";
+                    this.lblfalas.Refresh();
+
+                    string pergunta = this.perguntas.Dequeue();
+                    for (int i = 0; i < pergunta.Length; i++)
+                    {
+                        if (this.pararDeFalar)
+                        {    
+                            this.lblfalas.Text = pergunta;
+                            break;
+                        }
+                        this.lblfalas.Text += pergunta[i];
+                        Thread.Sleep(70);
+                        this.lblfalas.Refresh();
+                    }
+
+                    this.estaFalando = false;
+                }
+            }
+            else
+                throw new Exception();
         }
     }
 }

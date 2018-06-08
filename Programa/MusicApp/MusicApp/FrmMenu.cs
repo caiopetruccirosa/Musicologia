@@ -338,6 +338,7 @@ namespace MusicApp
             if (this.Fase != null && !this.Fase.Sair())
                 e.Cancel = true;
 
+            this.Fase = null;
             if (this.player != null)
                 this.player.Dispose();
             this.player = null;

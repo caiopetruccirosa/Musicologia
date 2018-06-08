@@ -70,6 +70,7 @@ namespace MusicApp
             this.BtnFase1 = new System.Windows.Forms.Button();
             this.LblFases = new System.Windows.Forms.Label();
             this.BtnMinimize = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.plContainer.SuspendLayout();
             this.plFase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).BeginInit();
@@ -141,6 +142,7 @@ namespace MusicApp
             this.lblFalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFalas.Location = new System.Drawing.Point(7, 349);
             this.lblFalas.Name = "lblFalas";
+            this.lblFalas.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.lblFalas.Size = new System.Drawing.Size(629, 92);
             this.lblFalas.TabIndex = 19;
             this.lblFalas.Text = "Falas";
@@ -224,17 +226,18 @@ namespace MusicApp
             // 
             this.plAbout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.plAbout.Controls.Add(this.label1);
             this.plAbout.Controls.Add(this.LblAbout);
             this.plAbout.Controls.Add(this.LblInfo);
             this.plAbout.Controls.Add(this.BtnVoltarAbout);
-            this.plAbout.Location = new System.Drawing.Point(614, 41);
+            this.plAbout.Location = new System.Drawing.Point(804, 7);
             this.plAbout.Name = "plAbout";
-            this.plAbout.Size = new System.Drawing.Size(321, 316);
+            this.plAbout.Size = new System.Drawing.Size(321, 346);
             this.plAbout.TabIndex = 10;
             // 
             // LblAbout
             // 
-            this.LblAbout.Font = new System.Drawing.Font("Segoe UI Black", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblAbout.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblAbout.Location = new System.Drawing.Point(50, 9);
             this.LblAbout.Name = "LblAbout";
@@ -245,11 +248,11 @@ namespace MusicApp
             // 
             // LblInfo
             // 
-            this.LblInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblInfo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblInfo.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.LblInfo.Location = new System.Drawing.Point(30, 65);
+            this.LblInfo.Location = new System.Drawing.Point(16, 55);
             this.LblInfo.Name = "LblInfo";
-            this.LblInfo.Size = new System.Drawing.Size(260, 229);
+            this.LblInfo.Size = new System.Drawing.Size(290, 241);
             this.LblInfo.TabIndex = 2;
             this.LblInfo.Text = resources.GetString("LblInfo.Text");
             this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,7 +282,7 @@ namespace MusicApp
             // 
             // LblAchievement
             // 
-            this.LblAchievement.Font = new System.Drawing.Font("Segoe UI Black", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAchievement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblAchievement.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblAchievement.Location = new System.Drawing.Point(50, 9);
             this.LblAchievement.Name = "LblAchievement";
@@ -315,7 +318,7 @@ namespace MusicApp
             // 
             // LblSettings
             // 
-            this.LblSettings.Font = new System.Drawing.Font("Segoe UI Black", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSettings.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblSettings.Location = new System.Drawing.Point(50, 11);
             this.LblSettings.Name = "LblSettings";
@@ -323,6 +326,17 @@ namespace MusicApp
             this.LblSettings.TabIndex = 4;
             this.LblSettings.Text = "Configurações";
             this.LblSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblVolume
+            // 
+            this.LblVolume.AutoSize = true;
+            this.LblVolume.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblVolume.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblVolume.Location = new System.Drawing.Point(27, 82);
+            this.LblVolume.Name = "LblVolume";
+            this.LblVolume.Size = new System.Drawing.Size(111, 32);
+            this.LblVolume.TabIndex = 2;
+            this.LblVolume.Text = "Volume: ";
             // 
             // TrackBarVolume
             // 
@@ -333,17 +347,6 @@ namespace MusicApp
             this.TrackBarVolume.TabIndex = 1;
             this.TrackBarVolume.Value = 50;
             this.TrackBarVolume.Scroll += new System.EventHandler(this.TrackBarVolume_Scroll);
-            // 
-            // LblVolume
-            // 
-            this.LblVolume.AutoSize = true;
-            this.LblVolume.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVolume.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.LblVolume.Location = new System.Drawing.Point(27, 82);
-            this.LblVolume.Name = "LblVolume";
-            this.LblVolume.Size = new System.Drawing.Size(109, 32);
-            this.LblVolume.TabIndex = 2;
-            this.LblVolume.Text = "Volume: " + TrackBarVolume.Value;
             // 
             // BtnVoltarSettings
             // 
@@ -605,6 +608,17 @@ namespace MusicApp
             this.BtnMinimize.UseVisualStyleBackColor = false;
             this.BtnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label1.Location = new System.Drawing.Point(34, 294);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 42);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Jogo desenvolvido por Caio Rosa e Nicholas Patapoff em C#.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,5 +697,6 @@ namespace MusicApp
         private System.Windows.Forms.Label LblInfo;
         private System.Windows.Forms.Label LblAchievement;
         private System.Windows.Forms.Label LblSettings;
+        private System.Windows.Forms.Label label1;
     }
 }

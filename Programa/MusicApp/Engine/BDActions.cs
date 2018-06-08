@@ -240,7 +240,7 @@ namespace Engine
 
                 alternativas = new string[table.Rows.Count];
                 for (int i = 0; i < table.Rows.Count; i++)
-                    alternativas[i] = table.Rows[i].ItemArray[0];
+                    alternativas[i] = table.Rows[i].ItemArray[0].ToString();
             }
             catch (Exception)
             {

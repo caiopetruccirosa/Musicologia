@@ -23,17 +23,13 @@ namespace MusicApp.Fases
             this.score = 0;
 
             this.player = new Player(volume);
+            this.player.TocarMusicaDeFundo(5);
 
-            this.pl.Refresh();
-
-            this.Jogo = new Thread(new ThreadStart(this.Jogar));
-            this.Jogo.Start();
+            this.ComecarExplicacao();
         }
 
         protected override void Jogar()
         {
-            this.player.TocarMusicaDeFundo(5);
-
             //string[] alternativas;
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(5, 1);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(5, 2);

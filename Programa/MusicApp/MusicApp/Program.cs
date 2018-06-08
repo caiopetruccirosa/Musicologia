@@ -16,7 +16,7 @@ namespace MusicApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenu(1));
+            Application.Run(new FrmMain());
             Application.Exit();
         }
     }

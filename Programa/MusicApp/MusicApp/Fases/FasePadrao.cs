@@ -56,6 +56,30 @@ namespace MusicApp.Fases
             return true;
         }
 
+        protected void ComecarExplicacao()
+        {
+            this.pl.Refresh();
+            this.pl.Click += (sender, args) =>
+            {
+                if (this.narrador != null)
+                {
+                    if (!this.narrador.estaFalando)
+                    {
+                        try
+                        {
+                            this.narrador.Falar();
+                        }
+                        catch (Exception)
+                        {
+                            this.Jogar();
+                        }
+                    }
+                }
+            };
+
+            this.narrador.Falar();
+        }
+
         abstract protected void Jogar();
     }
 }
