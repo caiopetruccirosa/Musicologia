@@ -26,7 +26,7 @@
             this.plName = new System.Windows.Forms.Panel();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
-            this.lbNome = new System.Windows.Forms.Label();
+            this.LblNome = new System.Windows.Forms.Label();
             this.PlCadastro = new System.Windows.Forms.Panel();
             this.LblPWStrength = new System.Windows.Forms.Label();
             this.LblAvisoCadastro = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.TxtLogPassword = new System.Windows.Forms.TextBox();
             this.TxtLogEmail = new System.Windows.Forms.TextBox();
+            this.TxtAux = new System.Windows.Forms.TextBox();
             this.plName.SuspendLayout();
             this.PlCadastro.SuspendLayout();
             this.PlLogin.SuspendLayout();
@@ -53,11 +54,11 @@
             this.plName.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.plName.Controls.Add(this.BtnMin);
             this.plName.Controls.Add(this.BtnClose);
-            this.plName.Controls.Add(this.lbNome);
+            this.plName.Controls.Add(this.LblNome);
             this.plName.Dock = System.Windows.Forms.DockStyle.Top;
             this.plName.Location = new System.Drawing.Point(0, 0);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(429, 69);
+            this.plName.Size = new System.Drawing.Size(430, 69);
             this.plName.TabIndex = 3;
             // 
             // BtnMin
@@ -91,16 +92,16 @@
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // lbNome
+            // LblNome
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.lbNome.Location = new System.Drawing.Point(107, 6);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(219, 57);
-            this.lbNome.TabIndex = 0;
-            this.lbNome.Text = "Musicologia";
+            this.LblNome.AutoSize = true;
+            this.LblNome.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNome.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblNome.Location = new System.Drawing.Point(107, 6);
+            this.LblNome.Name = "LblNome";
+            this.LblNome.Size = new System.Drawing.Size(219, 57);
+            this.LblNome.TabIndex = 0;
+            this.LblNome.Text = "Musicologia";
             // 
             // PlCadastro
             // 
@@ -310,12 +311,20 @@
             this.TxtLogEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLogEmail_KeyPress);
             this.TxtLogEmail.Leave += new System.EventHandler(this.TxtLogEmail_Leave);
             // 
+            // TxtAux
+            // 
+            this.TxtAux.Location = new System.Drawing.Point(-10, -10);
+            this.TxtAux.Name = "TxtAux";
+            this.TxtAux.Size = new System.Drawing.Size(10, 20);
+            this.TxtAux.TabIndex = 7;
+            // 
             // FrmMain
             // 
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::MusicApp.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(429, 396);
+            this.ClientSize = new System.Drawing.Size(430, 396);
+            this.Controls.Add(this.TxtAux);
             this.Controls.Add(this.PlLogin);
             this.Controls.Add(this.PlCadastro);
             this.Controls.Add(this.plName);
@@ -336,6 +345,7 @@
             this.PlLogin.ResumeLayout(false);
             this.PlLogin.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -349,7 +359,7 @@
         #endregion
 
         private System.Windows.Forms.Panel plName;
-        private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label LblNome;
         private System.Windows.Forms.Button BtnMin;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Panel PlCadastro;
@@ -368,6 +378,7 @@
         private System.Windows.Forms.Label LblAvisoCadastro;
         private System.Windows.Forms.Label LblAvisoLogin;
         private System.Windows.Forms.Label LblPWStrength;
+        private System.Windows.Forms.TextBox TxtAux;
     }
 }
 

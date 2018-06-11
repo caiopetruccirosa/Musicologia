@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Engine.DBO
+namespace Engine
 {
-    public class User
+    public class UserIP
     {
         public int Id { get; private set; }
         public string Username { get; private set; }
-        public string Email { get; private set; }
+        public IPAddress IP { get; private set; }
 
-        public User(int id, string username, string email)
+        public UserIP(int id, string username, string ip)
         {
             if (username == null || username.Trim() == "")
                 throw new Exception("Username nulo");
 
-            if (email == null || email.Trim() == "")
-                throw new Exception("E-mail nulo");
+            if (ip == null || ip.Trim() == "")
+                throw new Exception("IP nulo");
 
-            if (BDActions.CheckEmail(email))
-                this.Email = email;
+            if (IPAddress.TryParse(ip, out IPAddress address))
+                this.IP = address;
             else
-                throw new Exception("E-mail invalido");
+                throw new Exception("IP invalido");
 
             this.Id = id;
             this.Username = username;

@@ -59,25 +59,22 @@ namespace MusicApp.Fases
         protected void ComecarExplicacao()
         {
             this.pl.Refresh();
-            this.pl.Click += (sender, args) =>
+            this.pl.Click += (sender, args) => 
             {
                 if (this.narrador != null)
                 {
-                    if (!this.narrador.estaFalando)
-                    {
-                        try
-                        {
-                            this.narrador.Falar();
-                        }
-                        catch (Exception)
-                        {
-                            this.Jogar();
-                        }
-                    }
-                }
-            };
+                    try
+                    { this.narrador.Falar(); }
+                    catch (Exception)
+                    { this.Jogar(); }
+                }};
 
-            this.narrador.Falar();
+            try
+            {
+                this.narrador.Falar();
+            }
+            catch (Exception)
+            { }
         }
 
         abstract protected void Jogar();

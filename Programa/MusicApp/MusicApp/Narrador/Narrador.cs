@@ -125,7 +125,7 @@ namespace MusicApp.Narradores
                             break;
                         }
                         this.lblfalas.Text += fala[i];
-                        Thread.Sleep(70);
+                        Thread.Sleep(50);
                         this.lblfalas.Refresh();
                     }
 

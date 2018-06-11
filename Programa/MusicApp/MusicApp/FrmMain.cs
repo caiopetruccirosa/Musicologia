@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Engine.DBO;
 
 namespace MusicApp
 {
     public partial class FrmMain : Form
     {
         private SplashScreen splash;
-        private FrmMenu jogo;
+        private FrmJogo jogo;
         private string cs = Properties.Settings.Default.BD17197ConnectionString;
 
-        private string phTxtLogEmail = "E-mail...";
-        private string phTxtLogPassword = "Senha...";
-        private string phTxtCadUsername = "Username...";
-        private string phTxtCadPassword = "Senha...";
-        private string phTxtCadConfPass = "Confirme a senha...";
-        private string phTxtCadEmail = "E-mail...";
+        private const string phTxtLogEmail = "E-mail...";
+        private const string phTxtLogPassword = "Senha...";
+        private const string phTxtCadUsername = "Username...";
+        private const string phTxtCadPassword = "Senha...";
+        private const string phTxtCadConfPass = "Confirme a senha...";
+        private const string phTxtCadEmail = "E-mail...";
 
         private bool podeVerificar = false;
 
@@ -31,11 +32,12 @@ namespace MusicApp
         {
             InitializeComponent();
             InicializarCampos();
+
+            splash = new SplashScreen();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            splash = new SplashScreen();
             splash.Show();
         }
 
@@ -67,27 +69,36 @@ namespace MusicApp
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            int id;
-
             string email = TxtLogEmail.Text;
             string pw = TxtLogPassword.Text;
 
-            if (email == this.phTxtLogEmail && TxtLogEmail.ForeColor == Color.Gray)
+            if (email == phTxtLogEmail && TxtLogEmail.ForeColor == Color.Gray)
                 email = "";
 
-            if (pw == this.phTxtLogPassword && TxtLogPassword.ForeColor == Color.Gray && TxtLogPassword.UseSystemPasswordChar == false)
+            if (pw == phTxtLogPassword && TxtLogPassword.ForeColor == Color.Gray && TxtLogPassword.UseSystemPasswordChar == false)
                 pw = "";
 
             try
             {
-                id = Engine.BDActions.Login(email, pw);
-                if (id > 0)
+                User jogador = Engine.BDActions.Login(email, pw);
+                if (jogador != null)
                 {
-                    jogo = new FrmMenu(id);
+                    jogo = new FrmJogo(jogador);
 
                     this.Hide();
                     jogo.Show();
-                    jogo.FormClosed += (s, arg) => this.Close();
+                    jogo.FormClosing += (s, arg) =>
+                    {
+                        if (jogo.Deslogado)
+                        {
+                            jogo.Dispose();
+                            jogo = null;
+                            this.Show();
+                            this.InicializarCampos();
+                        }
+                        else
+                            this.Close();
+                    };
                 }
                 else
                     SinalizarAviso(LblAvisoLogin, "E-mail ou senha incorreto!");
@@ -105,16 +116,16 @@ namespace MusicApp
             string pw = TxtCadPassword.Text;
             string confpw = TxtCadConfPass.Text;
 
-            if (username == this.phTxtCadUsername && TxtCadUsername.ForeColor == Color.Gray)
+            if (username == phTxtCadUsername && TxtCadUsername.ForeColor == Color.Gray)
                 username = "";
 
-            if (email == this.phTxtCadEmail && TxtCadEmail.ForeColor == Color.Gray)
+            if (email == phTxtCadEmail && TxtCadEmail.ForeColor == Color.Gray)
                 email = "";
 
-            if (pw == this.phTxtCadPassword && TxtCadPassword.ForeColor == Color.Gray && TxtCadPassword.UseSystemPasswordChar == false)
+            if (pw == phTxtCadPassword && TxtCadPassword.ForeColor == Color.Gray && TxtCadPassword.UseSystemPasswordChar == false)
                 pw = "";
 
-            if (confpw == this.phTxtCadConfPass && TxtCadConfPass.ForeColor == Color.Gray && TxtCadConfPass.UseSystemPasswordChar == false)
+            if (confpw == phTxtCadConfPass && TxtCadConfPass.ForeColor == Color.Gray && TxtCadConfPass.UseSystemPasswordChar == false)
                 confpw = "";
 
             try
@@ -161,13 +172,15 @@ namespace MusicApp
 
         private void InicializarCampos()
         {
-            TxtLogEmail.Text = this.phTxtLogEmail;
-            TxtLogPassword.Text = this.phTxtLogPassword;
+            TxtAux.Focus();
 
-            TxtCadUsername.Text = this.phTxtCadUsername;
-            TxtCadPassword.Text = this.phTxtCadPassword;
-            TxtCadConfPass.Text = this.phTxtCadConfPass;
-            TxtCadEmail.Text = this.phTxtCadEmail;
+            TxtLogEmail.Text = phTxtLogEmail;
+            TxtLogPassword.Text = phTxtLogPassword;
+
+            TxtCadUsername.Text = phTxtCadUsername;
+            TxtCadPassword.Text = phTxtCadPassword;
+            TxtCadConfPass.Text = phTxtCadConfPass;
+            TxtCadEmail.Text = phTxtCadEmail;
 
             TxtLogPassword.UseSystemPasswordChar = false;
             TxtCadPassword.UseSystemPasswordChar = false;
@@ -199,30 +212,30 @@ namespace MusicApp
 
                 if (txt == TxtLogEmail)
                 {
-                    txt.Text = this.phTxtLogEmail;
+                    txt.Text = phTxtLogEmail;
                 }
                 else if (txt == TxtCadEmail)
                 {
-                    txt.Text = this.phTxtCadEmail;
+                    txt.Text = phTxtCadEmail;
                 }
                 else if (txt == TxtLogPassword)
                 {
                     txt.UseSystemPasswordChar = false;
-                    txt.Text = this.phTxtLogPassword;
+                    txt.Text = phTxtLogPassword;
                 }
                 else if (txt == TxtCadPassword)
                 {
                     txt.UseSystemPasswordChar = false;
-                    txt.Text = this.phTxtCadPassword;
+                    txt.Text = phTxtCadPassword;
                 }
                 else if (txt == TxtCadConfPass)
                 {
                     txt.UseSystemPasswordChar = false;
-                    txt.Text = this.phTxtCadConfPass;
+                    txt.Text = phTxtCadConfPass;
                 }
                 else if (txt == TxtCadUsername)
                 {
-                    txt.Text = this.phTxtCadUsername;
+                    txt.Text = phTxtCadUsername;
                 }
             }
         }
@@ -231,12 +244,12 @@ namespace MusicApp
         {
             if (
                 (
-                 (txt == TxtLogEmail && txt.Text == this.phTxtLogEmail) ||
-                 (txt == TxtCadEmail && txt.Text == this.phTxtCadEmail) ||
-                 (txt == TxtLogPassword && txt.Text == this.phTxtLogPassword) ||
-                 (txt == TxtCadPassword && txt.Text == this.phTxtCadPassword) ||
-                 (txt == TxtCadUsername && txt.Text == this.phTxtCadUsername) ||
-                 (txt == TxtCadConfPass && txt.Text == this.phTxtCadConfPass)
+                 (txt == TxtLogEmail && txt.Text == phTxtLogEmail) ||
+                 (txt == TxtCadEmail && txt.Text == phTxtCadEmail) ||
+                 (txt == TxtLogPassword && txt.Text == phTxtLogPassword) ||
+                 (txt == TxtCadPassword && txt.Text == phTxtCadPassword) ||
+                 (txt == TxtCadUsername && txt.Text == phTxtCadUsername) ||
+                 (txt == TxtCadConfPass && txt.Text == phTxtCadConfPass)
                 )
                 && txt.ForeColor == Color.Gray
                )

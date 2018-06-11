@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Net;
+using Engine.DBO;
 
 namespace Engine
 {
@@ -76,8 +77,11 @@ namespace Engine
             return System.Convert.ToBase64String(plainTextBytes);
         }
 
-        private static bool CheckEmail(string email)
+        public static bool CheckEmail(string email)
         {
+            if (email == null || email.Trim() == "")
+                return false;
+
             string pattern = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             if (Regex.IsMatch(email, pattern))
             {
@@ -113,7 +117,7 @@ namespace Engine
 
         ////////////////////////////////////////////
 
-        public static int Login(string email, string pw)
+        public static User Login(string email, string pw)
         {
             if (ValidaLogin(email, pw))
             {
@@ -122,13 +126,12 @@ namespace Engine
                 conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
                 // cria comando de consulta ao SQL 
-                SqlCommand cmd = new SqlCommand("SELECT id FROM usuario WHERE email=@email AND pw=@pw", conn);
+                SqlCommand cmd = new SqlCommand("SELECT id, username, email FROM usuario WHERE email=@email AND pw=@pw", conn);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@pw", EncodePassword(pw));
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                DataRow dr = null;
 
                 try
                 {
@@ -137,13 +140,23 @@ namespace Engine
                     // executa a consulta
                     adapter.Fill(ds);
 
-                    if (ds.Tables[0].Rows.Count > 0)
+                    DataTable table = ds.Tables[0];
+                    DataRow dr = null;
+
+                    User jogador = null;
+
+                    if (table.Rows.Count > 0)
                     {
-                        dr = ds.Tables[0].Rows[0];
-                        return Convert.ToInt32(dr.ItemArray[0].ToString());
+                        dr = table.Rows[0];
+
+                        int idExistente = (int)dr.ItemArray[0];
+                        string usernameExistente = (string)dr.ItemArray[1];
+                        string emailExistente = (string)dr.ItemArray[2];
+
+                        jogador = new User(idExistente, usernameExistente, emailExistente);
                     }
-                    else
-                        return -1;
+
+                    return jogador;
                 }
                 catch (Exception)
                 {
@@ -157,7 +170,7 @@ namespace Engine
                 }
             }
 
-            return -1;
+            return null;
         }
 
         public static bool Cadastrar(string username, string email, string pw, string confpw)
@@ -348,7 +361,7 @@ namespace Engine
             }
         }
 
-        public static User[] UsuariosDisponiveis()
+        public static UserIP[] UsuariosDisponiveis()
         {
             // cria conexao ao banco de dados
             SqlConnection conn = new SqlConnection();
@@ -360,7 +373,7 @@ namespace Engine
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
 
-            User[] users = null;
+            UserIP[] users = null;
             try
             {
                 //abre a conexao
@@ -371,7 +384,7 @@ namespace Engine
                 DataTable table = ds.Tables[0];
                 DataRow dr = null;
 
-                users = new User[table.Rows.Count];
+                users = new UserIP[table.Rows.Count];
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     dr = table.Rows[i];
@@ -380,7 +393,7 @@ namespace Engine
                     string username = (string)dr.ItemArray[1];
                     string ip = (string)dr.ItemArray[2];
 
-                    users[i] = new User(id, username, ip);
+                    users[i] = new UserIP(id, username, ip);
                 }
             }
             catch (Exception)

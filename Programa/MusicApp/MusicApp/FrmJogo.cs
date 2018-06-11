@@ -1,4 +1,5 @@
 ﻿using Engine;
+using Engine.DBO;
 using MusicApp.Fases;
 using System;
 using System.Drawing;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MusicApp
 {
-    public partial class FrmMenu : Form
+    public partial class FrmJogo : Form
     {
-        private int Id;
+        private User Jogador;
 
         private bool mouseDown;
         private Point lastLocation;
@@ -20,14 +21,20 @@ namespace MusicApp
         private Player player;
         private float volume;
 
+        public bool Deslogado { get; private set; }
+
         private FasePadrao Fase;
 
-        public FrmMenu(int id)
+        public FrmJogo(User jogador)
         {
+            if (jogador == null)
+                throw new Exception("Jogador inválido!");
+
             InitializeComponent();
 
-            this.Id = id;
+            this.Jogador = jogador;
             this.Fase = null;
+            this.Deslogado = false;
 
             this.volume = (float)TrackBarVolume.Value / 100;
 
@@ -41,6 +48,8 @@ namespace MusicApp
             plAbout.Hide();
             plAchievement.Hide();
             plMenu.Show();
+
+            LblUsername.Text = this.Jogador.Username;
 
             plSettings.Location = new Point(
                 this.ClientSize.Width / 2 - plSettings.Size.Width / 2,
@@ -72,22 +81,22 @@ namespace MusicApp
                 switch (n)
                 {
                     case 1:
-                        this.Fase = new Fase1(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase1(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                     case 2:
-                        this.Fase = new Fase2(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase2(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                     case 3:
-                        this.Fase = new Fase3(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase3(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                     case 4:
-                        this.Fase = new Fase4(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase4(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                     case 5:
-                        this.Fase = new Fase5(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase5(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                     case 6:
-                        this.Fase = new Fase6(plFase, pbNarrador, lblFalas, this.Id, volume);
+                        this.Fase = new Fase6(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                 }
             }            
@@ -126,7 +135,7 @@ namespace MusicApp
         private void PrepararControlesJogar()
         {
             Button[] fases = { BtnFase1, BtnFase2, BtnFase3, BtnFase4, BtnFase5, BtnFase6 };
-            FaseDados[] fasesJogadas = Engine.BDActions.FasesJogadas(this.Id);
+            FaseDados[] fasesJogadas = Engine.BDActions.FasesJogadas(this.Jogador.Id);
             
             for (int i = 0; i < fasesJogadas.Length; i++) {
                 FaseDados fase = fasesJogadas[i];
@@ -174,7 +183,7 @@ namespace MusicApp
             try
             {
                 IPAddress ip = this.LocalIPAddress();
-                Engine.BDActions.FicarDisponivel(this.Id, ip);
+                Engine.BDActions.FicarDisponivel(this.Jogador.Id, ip);
             }
             catch (Exception)
             { }
@@ -234,7 +243,7 @@ namespace MusicApp
         {
             try
             {
-                Engine.BDActions.FicarIndisponivel(this.Id);
+                Engine.BDActions.FicarIndisponivel(this.Jogador.Id);
             }
             catch (Exception)
             { }
@@ -301,6 +310,7 @@ namespace MusicApp
          
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            this.Deslogado = false;
             this.Close();
         }
 
@@ -351,6 +361,12 @@ namespace MusicApp
             this.volume = (float)TrackBarVolume.Value / 100;
             if (this.player != null)
                 this.player.Volume = this.volume;
+        }
+
+        private void BtnDeslogar_Click(object sender, EventArgs e)
+        {
+            this.Deslogado = true;
+            this.Close();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MusicApp
 {
-    partial class FrmMenu
+    partial class FrmJogo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@ namespace MusicApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJogo));
             this.BtnClose = new System.Windows.Forms.Button();
             this.plContainer = new System.Windows.Forms.Panel();
             this.plFase = new System.Windows.Forms.Panel();
-            this.lblFalas = new System.Windows.Forms.Label();
+            this.LblFalas = new System.Windows.Forms.Label();
             this.pbNarrador = new System.Windows.Forms.PictureBox();
             this.BtnVoltarFases = new System.Windows.Forms.PictureBox();
             this.plMultiplayer = new System.Windows.Forms.Panel();
@@ -42,6 +42,7 @@ namespace MusicApp
             this.BtnVoltarMenuMultiplayer = new System.Windows.Forms.PictureBox();
             this.LblMultiplayer = new System.Windows.Forms.Label();
             this.plAbout = new System.Windows.Forms.Panel();
+            this.LblDesenvolvedores = new System.Windows.Forms.Label();
             this.LblAbout = new System.Windows.Forms.Label();
             this.LblInfo = new System.Windows.Forms.Label();
             this.BtnVoltarAbout = new System.Windows.Forms.PictureBox();
@@ -54,6 +55,8 @@ namespace MusicApp
             this.TrackBarVolume = new System.Windows.Forms.TrackBar();
             this.BtnVoltarSettings = new System.Windows.Forms.PictureBox();
             this.plMenu = new System.Windows.Forms.Panel();
+            this.BtnDeslogar = new System.Windows.Forms.Button();
+            this.LblUsername = new System.Windows.Forms.Label();
             this.LblMenu = new System.Windows.Forms.Label();
             this.BtnSettings = new System.Windows.Forms.Button();
             this.BtnJogar = new System.Windows.Forms.Button();
@@ -70,7 +73,6 @@ namespace MusicApp
             this.BtnFase1 = new System.Windows.Forms.Button();
             this.LblFases = new System.Windows.Forms.Label();
             this.BtnMinimize = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.plContainer.SuspendLayout();
             this.plFase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).BeginInit();
@@ -128,7 +130,7 @@ namespace MusicApp
             // plFase
             // 
             this.plFase.BackColor = System.Drawing.Color.Transparent;
-            this.plFase.Controls.Add(this.lblFalas);
+            this.plFase.Controls.Add(this.LblFalas);
             this.plFase.Controls.Add(this.pbNarrador);
             this.plFase.Controls.Add(this.BtnVoltarFases);
             this.plFase.Location = new System.Drawing.Point(0, 0);
@@ -136,17 +138,17 @@ namespace MusicApp
             this.plFase.Size = new System.Drawing.Size(900, 450);
             this.plFase.TabIndex = 12;
             // 
-            // lblFalas
+            // LblFalas
             // 
-            this.lblFalas.BackColor = System.Drawing.Color.White;
-            this.lblFalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFalas.Location = new System.Drawing.Point(7, 349);
-            this.lblFalas.Name = "lblFalas";
-            this.lblFalas.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.lblFalas.Size = new System.Drawing.Size(629, 92);
-            this.lblFalas.TabIndex = 19;
-            this.lblFalas.Text = "Falas";
-            this.lblFalas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblFalas.BackColor = System.Drawing.Color.PapayaWhip;
+            this.LblFalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFalas.Location = new System.Drawing.Point(7, 349);
+            this.LblFalas.Name = "LblFalas";
+            this.LblFalas.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.LblFalas.Size = new System.Drawing.Size(629, 92);
+            this.LblFalas.TabIndex = 19;
+            this.LblFalas.Text = "Falas";
+            this.LblFalas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbNarrador
             // 
@@ -226,7 +228,8 @@ namespace MusicApp
             // 
             this.plAbout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAbout.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.plAbout.Controls.Add(this.label1);
+            this.plAbout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plAbout.Controls.Add(this.LblDesenvolvedores);
             this.plAbout.Controls.Add(this.LblAbout);
             this.plAbout.Controls.Add(this.LblInfo);
             this.plAbout.Controls.Add(this.BtnVoltarAbout);
@@ -234,6 +237,17 @@ namespace MusicApp
             this.plAbout.Name = "plAbout";
             this.plAbout.Size = new System.Drawing.Size(321, 346);
             this.plAbout.TabIndex = 10;
+            // 
+            // LblDesenvolvedores
+            // 
+            this.LblDesenvolvedores.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDesenvolvedores.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblDesenvolvedores.Location = new System.Drawing.Point(34, 294);
+            this.LblDesenvolvedores.Name = "LblDesenvolvedores";
+            this.LblDesenvolvedores.Size = new System.Drawing.Size(259, 42);
+            this.LblDesenvolvedores.TabIndex = 7;
+            this.LblDesenvolvedores.Text = "Jogo desenvolvido por Caio Rosa e Nicholas Patapoff em C#.";
+            this.LblDesenvolvedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblAbout
             // 
@@ -273,6 +287,7 @@ namespace MusicApp
             // 
             this.plAchievement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plAchievement.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.plAchievement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plAchievement.Controls.Add(this.LblAchievement);
             this.plAchievement.Controls.Add(this.BtnVoltarAchievement);
             this.plAchievement.Location = new System.Drawing.Point(352, 379);
@@ -307,6 +322,7 @@ namespace MusicApp
             // 
             this.plSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plSettings.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.plSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plSettings.Controls.Add(this.LblSettings);
             this.plSettings.Controls.Add(this.LblVolume);
             this.plSettings.Controls.Add(this.TrackBarVolume);
@@ -334,7 +350,7 @@ namespace MusicApp
             this.LblVolume.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblVolume.Location = new System.Drawing.Point(27, 82);
             this.LblVolume.Name = "LblVolume";
-            this.LblVolume.Size = new System.Drawing.Size(111, 32);
+            this.LblVolume.Size = new System.Drawing.Size(109, 32);
             this.LblVolume.TabIndex = 2;
             this.LblVolume.Text = "Volume: ";
             // 
@@ -363,6 +379,8 @@ namespace MusicApp
             // plMenu
             // 
             this.plMenu.BackColor = System.Drawing.Color.Transparent;
+            this.plMenu.Controls.Add(this.BtnDeslogar);
+            this.plMenu.Controls.Add(this.LblUsername);
             this.plMenu.Controls.Add(this.LblMenu);
             this.plMenu.Controls.Add(this.BtnSettings);
             this.plMenu.Controls.Add(this.BtnJogar);
@@ -373,6 +391,32 @@ namespace MusicApp
             this.plMenu.Name = "plMenu";
             this.plMenu.Size = new System.Drawing.Size(900, 450);
             this.plMenu.TabIndex = 7;
+            // 
+            // BtnDeslogar
+            // 
+            this.BtnDeslogar.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnDeslogar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnDeslogar.BackgroundImage")));
+            this.BtnDeslogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnDeslogar.FlatAppearance.BorderSize = 0;
+            this.BtnDeslogar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
+            this.BtnDeslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeslogar.Location = new System.Drawing.Point(491, 337);
+            this.BtnDeslogar.Name = "BtnDeslogar";
+            this.BtnDeslogar.Size = new System.Drawing.Size(32, 32);
+            this.BtnDeslogar.TabIndex = 8;
+            this.BtnDeslogar.UseVisualStyleBackColor = false;
+            this.BtnDeslogar.Click += new System.EventHandler(this.BtnDeslogar_Click);
+            // 
+            // LblUsername
+            // 
+            this.LblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.LblUsername.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblUsername.Location = new System.Drawing.Point(180, 121);
+            this.LblUsername.Name = "LblUsername";
+            this.LblUsername.Size = new System.Drawing.Size(531, 33);
+            this.LblUsername.TabIndex = 7;
+            this.LblUsername.Text = "Username";
+            this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblMenu
             // 
@@ -394,7 +438,7 @@ namespace MusicApp
             this.BtnSettings.FlatAppearance.BorderSize = 0;
             this.BtnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
             this.BtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSettings.Location = new System.Drawing.Point(393, 339);
+            this.BtnSettings.Location = new System.Drawing.Point(377, 337);
             this.BtnSettings.Name = "BtnSettings";
             this.BtnSettings.Size = new System.Drawing.Size(32, 32);
             this.BtnSettings.TabIndex = 0;
@@ -425,7 +469,7 @@ namespace MusicApp
             this.BtnAbout.FlatAppearance.BorderSize = 0;
             this.BtnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
             this.BtnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAbout.Location = new System.Drawing.Point(469, 339);
+            this.BtnAbout.Location = new System.Drawing.Point(453, 337);
             this.BtnAbout.Name = "BtnAbout";
             this.BtnAbout.Size = new System.Drawing.Size(32, 32);
             this.BtnAbout.TabIndex = 1;
@@ -456,7 +500,7 @@ namespace MusicApp
             this.BtnAchievement.FlatAppearance.BorderSize = 0;
             this.BtnAchievement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(124)))), ((int)(((byte)(1)))));
             this.BtnAchievement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAchievement.Location = new System.Drawing.Point(431, 339);
+            this.BtnAchievement.Location = new System.Drawing.Point(415, 337);
             this.BtnAchievement.Name = "BtnAchievement";
             this.BtnAchievement.Size = new System.Drawing.Size(32, 32);
             this.BtnAchievement.TabIndex = 2;
@@ -608,17 +652,6 @@ namespace MusicApp
             this.BtnMinimize.UseVisualStyleBackColor = false;
             this.BtnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.label1.Location = new System.Drawing.Point(34, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 42);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Jogo desenvolvido por Caio Rosa e Nicholas Patapoff em C#.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,7 +720,7 @@ namespace MusicApp
         private System.Windows.Forms.PictureBox BtnVoltarFases;
         private System.Windows.Forms.TrackBar TrackBarVolume;
         private System.Windows.Forms.PictureBox pbNarrador;
-        private System.Windows.Forms.Label lblFalas;
+        private System.Windows.Forms.Label LblFalas;
         private System.Windows.Forms.Panel plMultiplayer;
         private System.Windows.Forms.PictureBox BtnVoltarMenuMultiplayer;
         private System.Windows.Forms.Label LblMultiplayer;
@@ -697,6 +730,8 @@ namespace MusicApp
         private System.Windows.Forms.Label LblInfo;
         private System.Windows.Forms.Label LblAchievement;
         private System.Windows.Forms.Label LblSettings;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblDesenvolvedores;
+        private System.Windows.Forms.Label LblUsername;
+        private System.Windows.Forms.Button BtnDeslogar;
     }
 }
