@@ -31,7 +31,13 @@ namespace MusicApp
                 this._Volume = value;
 
                 this.playlist.ForEach((w) => {
-                    w.Volume = (float) w.Volume + proporcao;
+                    float v = w.Volume + proporcao;
+                    if (v < 0)
+                        w.Volume = 0;
+                    else if (v > 1)
+                        w.Volume = 1;
+                    else
+                        w.Volume = v;
                 });
             }
         }

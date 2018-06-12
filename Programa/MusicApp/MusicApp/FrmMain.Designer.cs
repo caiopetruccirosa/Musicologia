@@ -328,6 +328,7 @@
             this.Controls.Add(this.PlLogin);
             this.Controls.Add(this.PlCadastro);
             this.Controls.Add(this.plName);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;

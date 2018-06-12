@@ -19,7 +19,7 @@ namespace MusicApp.Fases
             this.pl = panel;
             this.narrador = new Narrador("VIVALDI", pbnarrador, lblfalas);
 
-            this.idJogador = id;
+            this.Id = id;
             this.score = 0;
 
             this.player = new Player(volume);
@@ -37,7 +37,7 @@ namespace MusicApp.Fases
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(5, 4);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(5, 5);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(5, 6);
-            //Engine.BDActions.GuardarScore(this.idJogador, 5, this.score);
+            Engine.BDActions.GuardarScore(this.Id, 5, this.score);
         }
     }
 }

@@ -15,9 +15,6 @@ namespace MusicApp
         public SplashScreen()
         {
             InitializeComponent();
-
-            this.Refresh();
-            LblNome.Refresh();
         }
     }
 }

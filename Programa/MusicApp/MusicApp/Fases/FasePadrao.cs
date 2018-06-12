@@ -16,7 +16,7 @@ namespace MusicApp.Fases
         protected Narrador narrador;
         protected Thread Jogo;
 
-        protected int idJogador;
+        protected int Id;
         protected int score;
 
         public void Terminar()
@@ -59,22 +59,26 @@ namespace MusicApp.Fases
         protected void ComecarExplicacao()
         {
             this.pl.Refresh();
-            this.pl.Click += (sender, args) => 
-            {
-                if (this.narrador != null)
-                {
-                    try
-                    { this.narrador.Falar(); }
-                    catch (Exception)
-                    { this.Jogar(); }
-                }};
+            this.pl.Click += this.CliqueProximaFala;
 
             try
-            {
-                this.narrador.Falar();
-            }
+            { this.narrador.Falar(); }
             catch (Exception)
             { }
+        }
+
+        protected void CliqueProximaFala(object sender, EventArgs e)
+        {
+            if (this.narrador != null)
+            {
+                try
+                { this.narrador.Falar(); }
+                catch (Exception)
+                {
+                    this.Jogar();
+                    this.pl.Click -= this.CliqueProximaFala;
+                }
+            }
         }
 
         abstract protected void Jogar();

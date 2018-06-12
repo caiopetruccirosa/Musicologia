@@ -37,7 +37,6 @@ C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Rele
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Release\Engine.dll.config
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csprojResolveAssemblyReference.cache
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMain.resources
-C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMenu.resources
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.Properties.Resources.resources
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.SplashScreen.resources
 C:\Users\u17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.GenerateResource.Cache
@@ -61,7 +60,6 @@ C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.exe
 C:\Users\u17197\Desktop\Programa\MusicApp\MusicApp\obj\Release\MusicApp.pdb
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csprojResolveAssemblyReference.cache
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMain.resources
-C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmMenu.resources
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.Properties.Resources.resources
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.SplashScreen.resources
 C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.csproj.GenerateResource.cache
@@ -98,3 +96,5 @@ Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.dll
 Z:\Musicologia\Programa\MusicApp\MusicApp\bin\Release\CSCore.xml
 C:\Users\U17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Release\CSCore.dll
 C:\Users\U17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\bin\Release\CSCore.xml
+C:\Users\U17167\Downloads\Musicologia-master\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmJogo.resources
+C:\Users\Caio Rosa\Desktop\Musicologia\Programa\MusicApp\MusicApp\obj\Release\MusicApp.FrmJogo.resources

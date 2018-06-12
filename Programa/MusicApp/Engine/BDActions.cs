@@ -160,7 +160,7 @@ namespace Engine
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Erro no login");
+                    throw new Exception("Erro no login!");
                 }
                 finally
                 {
@@ -215,7 +215,7 @@ namespace Engine
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Erro no cadastro");
+                    throw new Exception("Erro no cadastro!");
                 }
                 finally
                 {
@@ -257,7 +257,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao se comunicar com o banco de dados");
+                throw new Exception("Falha ao se comunicar com o banco de dados!");
             }
             finally
             {
@@ -293,7 +293,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao guardar score");
+                throw new Exception("Falha ao guardar score!");
             }
             finally
             {
@@ -324,7 +324,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao ficar indisponivel");
+                throw new Exception("Falha ao ficar disponível!");
             }
             finally
             {
@@ -351,7 +351,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao ficar indisponivel");
+                throw new Exception("Falha ao ficar indisponível!");
             }
             finally
             {
@@ -398,7 +398,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao se comunicar com o banco de dados");
+                throw new Exception("Falha ao se comunicar com o banco de dados!");
             }
             finally
             {
@@ -447,7 +447,7 @@ namespace Engine
             }
             catch (Exception)
             {
-                throw new Exception("Falha ao se comunicar com o banco de dados");
+                throw new Exception("Falha ao se comunicar com o banco de dados!");
             }
             finally
             {

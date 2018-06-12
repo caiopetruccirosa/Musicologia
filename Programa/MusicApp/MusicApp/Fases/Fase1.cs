@@ -19,7 +19,7 @@ namespace MusicApp.Fases
             this.pl = panel;
             this.narrador = new Narrador("BEETHOVEN", pbnarrador, lblfalas);
 
-            this.idJogador = id;
+            this.Id = id;
             this.score = 0;
 
             this.player = new Player(volume);
@@ -39,7 +39,7 @@ namespace MusicApp.Fases
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(1, 4);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(1, 5);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(1, 6);
-            //Engine.BDActions.GuardarScore(this.idJogador, 1, this.score);
+            Engine.BDActions.GuardarScore(this.Id, 1, this.score);
         }
     }
 }

@@ -56,7 +56,6 @@ namespace MusicApp
             this.BtnVoltarSettings = new System.Windows.Forms.PictureBox();
             this.plMenu = new System.Windows.Forms.Panel();
             this.BtnDeslogar = new System.Windows.Forms.Button();
-            this.LblUsername = new System.Windows.Forms.Label();
             this.LblMenu = new System.Windows.Forms.Label();
             this.BtnSettings = new System.Windows.Forms.Button();
             this.BtnJogar = new System.Windows.Forms.Button();
@@ -73,6 +72,8 @@ namespace MusicApp
             this.BtnFase1 = new System.Windows.Forms.Button();
             this.LblFases = new System.Windows.Forms.Label();
             this.BtnMinimize = new System.Windows.Forms.Button();
+            this.LblUsername = new System.Windows.Forms.Label();
+            this.plUsername = new System.Windows.Forms.Panel();
             this.plContainer.SuspendLayout();
             this.plFase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarrador)).BeginInit();
@@ -89,6 +90,7 @@ namespace MusicApp
             this.plMenu.SuspendLayout();
             this.plFases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuFases)).BeginInit();
+            this.plUsername.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -99,7 +101,7 @@ namespace MusicApp
             this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Location = new System.Drawing.Point(870, 0);
+            this.BtnClose.Location = new System.Drawing.Point(869, 0);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(25, 25);
             this.BtnClose.TabIndex = 0;
@@ -124,7 +126,7 @@ namespace MusicApp
             this.plContainer.Controls.Add(this.plFases);
             this.plContainer.Location = new System.Drawing.Point(0, 25);
             this.plContainer.Name = "plContainer";
-            this.plContainer.Size = new System.Drawing.Size(899, 451);
+            this.plContainer.Size = new System.Drawing.Size(898, 451);
             this.plContainer.TabIndex = 4;
             // 
             // plFase
@@ -350,9 +352,9 @@ namespace MusicApp
             this.LblVolume.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.LblVolume.Location = new System.Drawing.Point(27, 82);
             this.LblVolume.Name = "LblVolume";
-            this.LblVolume.Size = new System.Drawing.Size(109, 32);
+            this.LblVolume.Size = new System.Drawing.Size(135, 32);
             this.LblVolume.TabIndex = 2;
-            this.LblVolume.Text = "Volume: ";
+            this.LblVolume.Text = "Volume: 50";
             // 
             // TrackBarVolume
             // 
@@ -379,8 +381,8 @@ namespace MusicApp
             // plMenu
             // 
             this.plMenu.BackColor = System.Drawing.Color.Transparent;
+            this.plMenu.Controls.Add(this.plUsername);
             this.plMenu.Controls.Add(this.BtnDeslogar);
-            this.plMenu.Controls.Add(this.LblUsername);
             this.plMenu.Controls.Add(this.LblMenu);
             this.plMenu.Controls.Add(this.BtnSettings);
             this.plMenu.Controls.Add(this.BtnJogar);
@@ -406,17 +408,6 @@ namespace MusicApp
             this.BtnDeslogar.TabIndex = 8;
             this.BtnDeslogar.UseVisualStyleBackColor = false;
             this.BtnDeslogar.Click += new System.EventHandler(this.BtnDeslogar_Click);
-            // 
-            // LblUsername
-            // 
-            this.LblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.LblUsername.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.LblUsername.Location = new System.Drawing.Point(180, 121);
-            this.LblUsername.Name = "LblUsername";
-            this.LblUsername.Size = new System.Drawing.Size(531, 33);
-            this.LblUsername.TabIndex = 7;
-            this.LblUsername.Text = "Username";
-            this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblMenu
             // 
@@ -644,7 +635,7 @@ namespace MusicApp
             this.BtnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimize.Location = new System.Drawing.Point(842, 0);
+            this.BtnMinimize.Location = new System.Drawing.Point(841, 0);
             this.BtnMinimize.Name = "BtnMinimize";
             this.BtnMinimize.Size = new System.Drawing.Size(25, 25);
             this.BtnMinimize.TabIndex = 0;
@@ -652,17 +643,39 @@ namespace MusicApp
             this.BtnMinimize.UseVisualStyleBackColor = false;
             this.BtnMinimize.Click += new System.EventHandler(this.BtnMinimize_Click);
             // 
-            // FrmMenu
+            // LblUsername
+            // 
+            this.LblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 21F, System.Drawing.FontStyle.Bold);
+            this.LblUsername.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.LblUsername.Location = new System.Drawing.Point(3, 25);
+            this.LblUsername.Name = "LblUsername";
+            this.LblUsername.Size = new System.Drawing.Size(160, 66);
+            this.LblUsername.TabIndex = 10;
+            this.LblUsername.Text = "Username";
+            this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plUsername
+            // 
+            this.plUsername.BackgroundImage = global::MusicApp.Properties.Resources.username;
+            this.plUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.plUsername.Controls.Add(this.LblUsername);
+            this.plUsername.Location = new System.Drawing.Point(-3, 13);
+            this.plUsername.Name = "plUsername";
+            this.plUsername.Size = new System.Drawing.Size(170, 130);
+            this.plUsername.TabIndex = 11;
+            // 
+            // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(899, 474);
+            this.ClientSize = new System.Drawing.Size(898, 474);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.plContainer);
             this.Controls.Add(this.BtnMinimize);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmMenu";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Musicologia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu_FormClosing);
@@ -686,6 +699,7 @@ namespace MusicApp
             this.plMenu.ResumeLayout(false);
             this.plFases.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnVoltarMenuFases)).EndInit();
+            this.plUsername.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -731,7 +745,8 @@ namespace MusicApp
         private System.Windows.Forms.Label LblAchievement;
         private System.Windows.Forms.Label LblSettings;
         private System.Windows.Forms.Label LblDesenvolvedores;
-        private System.Windows.Forms.Label LblUsername;
         private System.Windows.Forms.Button BtnDeslogar;
+        private System.Windows.Forms.Label LblUsername;
+        private System.Windows.Forms.Panel plUsername;
     }
 }

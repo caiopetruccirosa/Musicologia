@@ -19,7 +19,7 @@ namespace MusicApp.Fases
             this.pl = panel;
             this.narrador = new Narrador("MOZART", pbnarrador, lblfalas);
 
-            this.idJogador = id;
+            this.Id = id;
             this.score = 0;
 
             this.player = new Player(volume);
@@ -38,7 +38,7 @@ namespace MusicApp.Fases
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 4);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 5);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 6);
-            //Engine.BDActions.GuardarScore(this.idJogador, 2, this.score);
+            Engine.BDActions.GuardarScore(this.Id, 2, this.score);
         }
     }
 }

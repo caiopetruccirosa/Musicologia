@@ -39,6 +39,9 @@ namespace MusicApp
         private void FrmMain_Load(object sender, EventArgs e)
         {
             splash.Show();
+            Application.DoEvents();
+
+            Thread.Sleep(2000);
         }
 
         private void FrmMain_Shown(object sender, EventArgs e)

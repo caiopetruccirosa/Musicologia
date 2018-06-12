@@ -19,7 +19,7 @@ namespace MusicApp.Fases
             this.pl = panel;
             this.narrador = new Narrador("TCHAIKOSKY", pbnarrador, lblfalas);
 
-            this.idJogador = id;
+            this.Id = id;
             this.score = 0;
 
             this.player = new Player(volume);
@@ -37,7 +37,7 @@ namespace MusicApp.Fases
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(6, 4);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(6, 5);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(6, 6);
-            //Engine.BDActions.GuardarScore(this.idJogador, 6, this.score);
+            Engine.BDActions.GuardarScore(this.Id, 6, this.score);
         }
     }
 }

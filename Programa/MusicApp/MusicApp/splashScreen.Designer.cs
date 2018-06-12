@@ -29,21 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
-            this.LblNome = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // LblNome
-            // 
-            this.LblNome.BackColor = System.Drawing.Color.Transparent;
-            this.LblNome.Font = new System.Drawing.Font("Mistral", 56F);
-            this.LblNome.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.LblNome.Location = new System.Drawing.Point(1, 1);
-            this.LblNome.Name = "LblNome";
-            this.LblNome.Size = new System.Drawing.Size(521, 185);
-            this.LblNome.TabIndex = 1;
-            this.LblNome.Text = "Musicologia";
-            this.LblNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LblNome.UseWaitCursor = true;
             // 
             // SplashScreen
             // 
@@ -51,18 +37,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(523, 187);
-            this.Controls.Add(this.LblNome);
+            this.ClientSize = new System.Drawing.Size(660, 236);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "splashScreen";
             this.UseWaitCursor = true;
             this.ResumeLayout(false);
+
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LblNome;
     }
 }
