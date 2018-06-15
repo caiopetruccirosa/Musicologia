@@ -38,7 +38,8 @@ namespace MusicApp.Fases
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 4);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 5);
             //string[] alternativas = Engine.BDActions.CarregarAlternativas(2, 6);
-            Engine.BDActions.GuardarScore(this.Id, 2, this.score);
+
+            this.Finalizar();
         }
     }
 }

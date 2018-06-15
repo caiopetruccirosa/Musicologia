@@ -16,6 +16,8 @@ namespace MusicApp.Fases
         protected Narrador narrador;
         protected Thread Jogo;
 
+        public event Action FinalizarFase;
+
         protected int Id;
         protected int score;
 
@@ -24,7 +26,13 @@ namespace MusicApp.Fases
             this.Encerrar();
         }
 
-        protected void Encerrar()
+        public void Finalizar()
+        {
+            Engine.BDActions.GuardarScore(this.Id, 1, this.score);
+            this.FinalizarFase();
+        }
+
+        public void Encerrar()
         {
             if (this.player != null)
                 this.player.Dispose();
@@ -37,7 +45,7 @@ namespace MusicApp.Fases
                         this.Jogo.Abort();
                 }
 
-            this.pl.Click -= (sender, args) => this.narrador.Falar();
+            this.pl.Click -= this.CliqueProximaFala;
 
             this.Jogo = null;
             this.player = null;
@@ -76,7 +84,8 @@ namespace MusicApp.Fases
                 catch (Exception)
                 {
                     this.Jogar();
-                    this.pl.Click -= this.CliqueProximaFala;
+                    if (this.pl != null)
+                        this.pl.Click -= this.CliqueProximaFala;
                 }
             }
         }

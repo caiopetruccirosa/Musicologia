@@ -280,7 +280,7 @@ namespace Engine
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
-            SqlCommand cmd = new SqlCommand("EXEC sp_guardarscore @id, @fase, @score");
+            SqlCommand cmd = new SqlCommand("EXEC sp_guardarscore @id, @fase, @score", conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@fase", fase);
             cmd.Parameters.AddWithValue("@score", score);
@@ -312,7 +312,7 @@ namespace Engine
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
-            SqlCommand cmd = new SqlCommand("EXEC sp_ficardisponivel @id, @ip");
+            SqlCommand cmd = new SqlCommand("EXEC sp_ficardisponivel @id, @ip", conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@ip", ip.ToString());
 
@@ -340,7 +340,7 @@ namespace Engine
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
-            SqlCommand cmd = new SqlCommand("EXEC sp_ficarindisponivel @id");
+            SqlCommand cmd = new SqlCommand("EXEC sp_ficarindisponivel @id", conn);
             cmd.Parameters.AddWithValue("@id", id);
 
             try

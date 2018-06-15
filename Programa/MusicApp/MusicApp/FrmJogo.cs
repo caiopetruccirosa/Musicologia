@@ -73,6 +73,22 @@ namespace MusicApp
             return host.AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
         }
 
+        private void EncerrarFase()
+        {
+            if (this.Fase != null)
+                this.Fase.Encerrar();
+            this.Fase = null;
+
+            this.player.Resume();
+
+            PrepararControlesJogar();
+
+            plMenu.Hide();
+            plFase.Hide();
+            plMultiplayer.Hide();
+            plFases.Show();
+        }
+
         private void IniciarFase(int n)
         {       
             if (this.Fase == null)
@@ -99,6 +115,7 @@ namespace MusicApp
                         this.Fase = new Fase6(plFase, pbNarrador, LblFalas, this.Jogador.Id, volume);
                         break;
                 }
+                this.Fase.FinalizarFase += this.EncerrarFase;
             }            
         }
 
